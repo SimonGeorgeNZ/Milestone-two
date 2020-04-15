@@ -1,1 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700');
+
+/*--------------------------------------------Generic styling*/
+
+.border1 {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.black {
+    background-color: black;
+}
+
+@font-face {
+    font-family: 'all-blacks';
+    src: url(../fonts/nougat-extrablack-webfont.woff);
+    font-style: normal;
+    font-weight: 200;
+}
+
+
+/*--------------------------------------------Header*/
+
+.logo-img {
+    background: url("../images/ablogo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 99%;
+    }
+
+
+
+
+
+.title span {
+    font-family: all-blacks;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+}
