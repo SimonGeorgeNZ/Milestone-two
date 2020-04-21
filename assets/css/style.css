@@ -16,27 +16,55 @@
     font-family: 'all-blacks';
     src: url(../fonts/nougat-extrablack-webfont.woff);
     font-style: normal;
-    font-weight: 200;
+    font-size: 12px;
+}
+
+.abtext {
+    font-family: all-blacks;
+    color: white;
 }
 
 
 /*--------------------------------------------Header*/
 
+
+
 .logo-img {
     background: url("../images/ablogo.png");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 99%;
     }
 
-
-
+.title {
+    display: block;
+    max-height: 150px;
+    font-size: 6vw;
+}
 
 
 .title span {
-    font-family: all-blacks;
-    color: white;
+    display: inline;
     text-align: center;
     width: 100%;
-    font-size: 4rem;
+
 }
+
+.menuitem {
+    padding: 0;
+    max-height: 50px;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.menuitem a {
+    width: 100%;
+}
+
+.menuitem span {
+    width: 100%;
+}
+
+
+
