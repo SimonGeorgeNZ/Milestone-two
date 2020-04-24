@@ -5,11 +5,28 @@
 .border1 {
     border-style: solid;
     border-color: white;
-    border-width: 2px;
+    border-width: 4px;
+}
+
+/*-------Border raduis left------*/
+.brl {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/*-------Border raduis right top------*/
+.brrt {
+    border-top-right-radius: 10px;
+}
+
+/*-------Border raduis right bottom------*/
+.brrb {
+    border-bottom-right-radius: 10px;
 }
 
 .black {
     background-color: black;
+    height: auto;
 }
 
 @font-face {
@@ -24,38 +41,56 @@
     color: white;
 }
 
+html body {
+    height: 100%;
+}
+
 
 /*--------------------------------------------Header*/
 
-
+.title-main {
+    margin-top: 15px;
+    margin-left: 1px!important;
+    margin-right: 1px!important;
+}
 
 .logo-img {
     background: url("../images/ablogo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 99%;
+    border-right: none;
     }
 
 .title {
     display: block;
-    max-height: 150px;
-    font-size: 6vw;
+    max-height: 175px;
+    border-bottom: none;
 }
 
 
-.title span {
+.title h1 {
     display: inline;
     text-align: center;
     width: 100%;
+    font-size: 6vw;
+}
 
+.title h2 {
+    display: inline;
+    text-align: center;
+    width: 100%;
+    font-size: 4vw;
 }
 
 .menuitem {
     padding: 0;
-    max-height: 50px;
     text-align: center;
     font-size: 2vw;
+}
+
+.menu-nav {
+    max-height: 65px;
 }
 
 .menuitem a {
@@ -64,7 +99,33 @@
 
 .menuitem span {
     width: 100%;
+    display: block;
 }
+
+.border-off {
+    border-right: none;
+}
+
+
+
+/*--------------------------------------------Body*/
+
+
+.your-team {
+    top: 10px;
+    bottom: -10px;
+    text-align: center;
+    font-size: 2.5vw;
+    margin-right: 15px!important;
+}
+
+.players {
+    top: 10px;
+    text-align: center;
+    font-size: 2.5vw;
+    margin-left: 15px!important;
+}
+
 
 
 
