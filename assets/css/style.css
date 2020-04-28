@@ -26,7 +26,6 @@
 
 .black {
     background-color: black;
-    height: auto;
 }
 
 @font-face {
@@ -112,18 +111,19 @@ html body {
 
 
 .your-team {
-    top: 10px;
-    bottom: -10px;
     text-align: center;
     font-size: 2.5vw;
-    margin-right: 15px!important;
 }
 
 .players {
-    top: 10px;
     text-align: center;
     font-size: 2.5vw;
-    margin-left: 15px!important;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.body-main {
+    margin-top: 15px;
 }
 
 
