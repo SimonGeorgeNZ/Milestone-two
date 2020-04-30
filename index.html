@@ -2,58 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta name="description" content=""/>
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
-    <title>Chose your team!</title>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+	<title>Chose your team!</title>
+	<script type="text/javascript" src="assets/js/scripts.js"></script>
 </head>
 <header class="container-fluid">
-    <div class="row title-main">
-        <div class="col border1 logo-img brl">
-            
-        </div>
-        <div class="col-9">
-            <div class="row title border1 abtext brrt">
-                <h1>Pick Six!</h1>
-                <h2>Something else here</h2>
-            </div>
-            <div class="row menu-nav">
-                <div class="col border1 menuitem border-off">
-                    <a href="" class="abtext"><span>All Players</span></a>
-                </div>
-                <div class="col border1 menuitem border-off">
-                    <a href="" class="abtext"><span>Forwards</span></a>
-                </div>
-                <div class="col border1 menuitem border-off">
-                    <a href="" class="abtext"><span>Backs</span></a>
-                </div>
-                <div class="col border1 menuitem brrb">
-                    <a href="" class="abtext"><span>Your Team</span></a>
-                </div>
-            </div>
-        </div>
-    </div>    
+	<div class="row title-main">
+		<div class="col border1 logo-img brl">
+
+		</div>
+		<div class="col-9">
+			<div class="row title border1 abtext brrt">
+				<h1>Pick Six!</h1>
+				<h2>Something else here</h2>
+			</div>
+			<div class="row menu-nav">
+				<div class="col border1 menuitem border-off">
+					<a href="" class="abtext"><span>All Players</span></a>
+				</div>
+				<div class="col border1 menuitem border-off">
+					<a href="" class="abtext"><span>Forwards</span></a>
+				</div>
+				<div class="col border1 menuitem border-off">
+					<a href="" class="abtext"><span>Backs</span></a>
+				</div>
+				<div class="col border1 menuitem brrb">
+					<a href="" class="abtext"><span>Your Team</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
+
 <body class="black">
-    <div class="row container-fluid no-gutters body-main">
-        <div class="col">
-            <div class="col border1 abtext your-team brl">
-                <span>Your team</span>
-            </div>
-        </div>
-        <div class="col-9">
-            <div class="col abtext border1 players brrt brrb">
-                <span>Players</span>
-                    <div id="data"></div>
-            </div>
-        </div>
-    </div>
+	<div class="row container-fluid no-gutters body-main">
+		<div class="col">
+			<div class="col border1 abtext your-team brl">
+				<h3>Your team</h3>
+			</div>
+		</div>
+		<div class="col-9">
+			<div class="col abtext border1 players brrt brrb">
+				<h3>Players</h3>
+                <button onclick="writeToDocument('data')">Players</button>
+				<div id="data"></div>
+			</div>
+		</div>
+	</div>
 </body>
 <footer>
- 
+
 </footer>
+
 </html>
