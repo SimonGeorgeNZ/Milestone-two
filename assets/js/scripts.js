@@ -1,9 +1,9 @@
 const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
 
-function getData(type, cb) {
-    var xhr = new XMLHttpRequest()
+function getData(cb) {
+    var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", baseURL)
+    xhr.open("GET", baseURL);
     xhr.send();
 
     xhr.onreadystatechange = function () {
@@ -13,18 +13,26 @@ function getData(type, cb) {
     };
 }
 
-function writeToDocument(type) {
-    getData(type, function (data) {
+getData();
+
+
+function createPlayerElements() {
+    getData(function (data) {
         data = data.players;
 
-        data.forEach(function (item) {
-            document.getElementById("data").innerHTML += "<p>" + item.name + 
-            "<br>" + item.type +
-            "<br>" + item.height +
-            "<br>" + item.weight + "</p>";
-        })
+        data.forEach(function () {
+            document.getElementById('player_data');
+            var div = document.createElement('div');
+            div.className = 'items';
+            document.getElementById('player_data').appendChild(div);
+        });
     });
 }
+
+
+
+
+
 
 
 

@@ -8,8 +8,9 @@
 	<meta name="description" content="" />
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
 	<title>Chose your team!</title>
-	<script type="text/javascript" src="assets/js/scripts.js"></script>
+
 </head>
 <header class="container-fluid">
 	<div class="row title-main">
@@ -49,14 +50,15 @@
 		<div class="col-9">
 			<div class="col abtext border1 players brrt brrb">
 				<h3>Players</h3>
-                <button onclick="writeToDocument('data')">Players</button>
-				<div id="data"></div>
+
+				<div id="player_data"></div>
 			</div>
 		</div>
 	</div>
+    <script>onload = createPlayerElements();</script>
 </body>
 <footer>
 
 </footer>
-
+	
 </html>
