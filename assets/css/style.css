@@ -5,7 +5,7 @@
 .border1 {
     border-style: solid;
     border-color: white;
-    border-width: 4px;
+    border-width: .2vw;
 }
 
 /*-------Border raduis left------*/
@@ -48,7 +48,7 @@ html body {
 /*--------------------------------------------Header*/
 
 .title-main {
-    margin-top: 15px;
+    margin-top: 1vw;
     margin-left: 1px!important;
     margin-right: 1px!important;
 }
@@ -63,7 +63,7 @@ html body {
 
 .title {
     display: block;
-    max-height: 175px;
+    max-height: 15vw;
     border-bottom: none;
 }
 
@@ -89,7 +89,7 @@ html body {
 }
 
 .menu-nav {
-    max-height: 65px;
+    max-height: 4vw;
 }
 
 .menuitem a {
@@ -121,7 +121,7 @@ html body {
 }
 
 .body-main {
-    margin-top: 15px;
+    margin-top: 1vw;
 }
 
 .body-main h3 {
@@ -139,12 +139,21 @@ html body {
 .items {
     border-style: solid;
     border-color: white;
-    border-width: 4px;
-    font-size: 2.5vw;
+    border-width: .2vw;
+    font-size: 1.3vw;
     color: white;
-    height: 15vh;
+    max-height: 25vh;
     width: 20vw;
     display: inline-block;
-    margin-right: 10px;
+    margin-right: .8vw;
     border-radius: 10px;
+    margin-top: .8vw;
+    padding-top: .8vw;
 }
+
+/*--------------------------------------------Dropdown*/
+
+
+
+/*--------------------------------------------Modals*/
+

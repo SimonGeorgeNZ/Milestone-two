@@ -13,27 +13,22 @@ function getData(cb) {
     };
 }
 
-getData();
-
 
 function createPlayerElements() {
     getData(function (data) {
         data = data.players;
 
-        data.forEach(function () {
+        data.forEach(function (d) {
+            console.log(d);
             document.getElementById('player_data');
-            var div = document.createElement('div');
+            const div = document.createElement('div');
             div.className = 'items';
+            div.innerHTML = "<p>" + "Name:" + " " + d.name +
+                "<br>" + "Position:" + " " + d.type +
+                "<br>" + "Height:" + " " + d.height +
+                "<br>" + "Weight:" + " " + d.weight + "</p>";
             document.getElementById('player_data').appendChild(div);
         });
     });
 }
-
-
-
-
-
-
-
-
 
