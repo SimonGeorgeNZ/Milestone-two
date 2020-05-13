@@ -36,7 +36,7 @@
 }
 
 .abtext {
-    font-family: all-blacks;
+    font-family: 'all-blacks';
     color: white;
 }
 
@@ -83,7 +83,7 @@ html body {
 }
 
 .menuitem {
-    padding: 0;
+    padding: 0!important;
     text-align: center;
     font-size: 2vw;
 }
@@ -136,24 +136,45 @@ html body {
     background-color: black;
 }
 
-.items {
+.player-data {
     border-style: solid;
     border-color: white;
     border-width: .2vw;
     font-size: 1.3vw;
     color: white;
-    max-height: 25vh;
-    width: 20vw;
+    max-height: 40vh;
+    width: 19vw;
     display: inline-block;
-    margin-right: .8vw;
     border-radius: 10px;
-    margin-top: .8vw;
+    margin-top: 1.2vw;
     padding-top: .8vw;
+    margin: .5vw;
 }
 
-/*--------------------------------------------Dropdown*/
+.player-select {
+    background-color: white;
+    color: black;
+    font-weight: 50;
+    margin-bottom: .8vw;
+}
+
+.items {
+    margin-bottom: .8vw;
+}
 
 
 
 /*--------------------------------------------Modals*/
 
+.modal-dialog {
+    background-color: white;
+    color: black;
+    font-family: 'all-blacks';
+}
+
+.openModalbtn {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}

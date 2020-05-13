@@ -22,13 +22,28 @@ function createPlayerElements() {
             console.log(d);
             document.getElementById('player_data');
             const div = document.createElement('div');
+            const outter = document.createElement('div');
+            const select = document.createElement('button');
+            select.className = 'player-select';
+            select.innerHTML = "Select";
+            outter.className = 'player-data'
             div.className = 'items';
-            div.innerHTML = "<p>" + "Name:" + " " + d.name +
+            div.innerHTML = "Name:" + " " + d.name +
                 "<br>" + "Position:" + " " + d.type +
                 "<br>" + "Height:" + " " + d.height +
-                "<br>" + "Weight:" + " " + d.weight + "</p>";
-            document.getElementById('player_data').appendChild(div);
+                "<br>" + "Weight:" + " " + d.weight;
+            document.getElementById('player_data').appendChild(outter);
+            outter.appendChild(div);
+            outter.appendChild(select);
         });
     });
 }
+
+
+$(document).ready(function() {
+    $("#openModal").modal('show');
+});
+
+    
+
 
