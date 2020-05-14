@@ -35,15 +35,23 @@ function createPlayerElements() {
             document.getElementById('player_data').appendChild(outter);
             outter.appendChild(div);
             outter.appendChild(select);
+            if (d.type == ['PR'] || d.type == ['L'] || d.type == ['BR'] || d.type == ['HO']) {
+                outter.classList.add('forward');
+            } else {
+                outter.classList.add('back');
+            }
+            var button = document.getElementById('forwards');
+            button.onclick = function () {
+                if(outter.classList === 'forward');
+                outter.style.display = 'none';
+            }
         });
     });
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#openModal").modal('show');
 });
-
-    
 
 
