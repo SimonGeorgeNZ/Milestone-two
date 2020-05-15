@@ -35,7 +35,7 @@ function createPlayerElements() {
             document.getElementById('player_data').appendChild(outter);
             outter.appendChild(div);
             outter.appendChild(select);
-            if (d.type == ['PR'] || d.type == ['L'] || d.type == ['BR'] || d.type == ['HO']){
+            if (d.type == ['PR'] || d.type == ['L'] || d.type == ['BR'] || d.type == ['HO']) {
                 outter.classList.add('forward');
             } else {
                 outter.classList.add('back');
@@ -49,23 +49,28 @@ $(document).ready(function () {
     $("#openModal").modal('show');
 });
 
-function forwards () {
+function forwards() {
     var allPlayers = document.getElementsByClassName('player-data');
-    for(i=0; i<allPlayers.length; i++)
-    allPlayers[i].style.display = '';
+    for (i = 0; i < allPlayers.length; i++)
+        allPlayers[i].style.display = '';
     var forwards = document.getElementsByClassName('back');
-    for(i=0; i<forwards.length; i++) {
+    for (i = 0; i < forwards.length; i++) {
         forwards[i].style.display = 'none';
     }
 }
 
-function backs () {
+function backs() {
     var allPlayers = document.getElementsByClassName('player-data');
-    for(i=0; i<allPlayers.length; i++)
-    allPlayers[i].style.display = '';
+    for (i = 0; i < allPlayers.length; i++)
+        allPlayers[i].style.display = '';
     var backs = document.getElementsByClassName('forward');
-    for(i=0; i<backs.length; i++) {
+    for (i = 0; i < backs.length; i++) {
         backs[i].style.display = 'none';
     }
 }
 
+function allPlayers() {
+    var allPlayers = document.getElementsByClassName('player-data');
+    for (i = 0; i < allPlayers.length; i++)
+        allPlayers[i].style.display = '';
+}
