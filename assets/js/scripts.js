@@ -40,13 +40,19 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
+            console.log(typeof(d.name));
         });
     });
 }
 
 
 $(document).ready(function () {
-    $("#openModal").modal('show');
+    if (typeof Storage != "undefined") {
+        if (!sessionStorage.getItem('openModal')) {
+            $("#openModal").modal('show');
+        }
+        sessionStorage.setItem('openModal', true);
+    }
 });
 
 function forwards() {
@@ -73,4 +79,5 @@ function allPlayers() {
     var allPlayers = document.getElementsByClassName('player-data');
     for (i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
+    document.getElementById('openModal').style.display = 'hidden';
 }
