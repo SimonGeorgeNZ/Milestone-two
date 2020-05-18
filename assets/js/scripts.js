@@ -26,7 +26,7 @@ function createPlayerElements() {
             const select = document.createElement('button');
             select.className = 'player-select';
             select.innerHTML = "Select";
-            outter.className = 'player-data'
+            outter.className = 'player-data';
             div.className = 'items';
             div.innerHTML = "Name:" + " " + d.name +
                 "<br>" + "Position:" + " " + d.type +
@@ -40,10 +40,15 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-            console.log(typeof(d.name));
+            select.onclick = function(){
+                $("#selectModal").modal('show');
+            }
         });
     });
 }
+
+
+
 
 
 $(document).ready(function () {

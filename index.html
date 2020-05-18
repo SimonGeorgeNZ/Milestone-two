@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
 	<title>Chose your team!</title>
 
 </head>
@@ -26,7 +29,8 @@
 					<a href="" id="allPlayers" class="abtext" onclick="allPlayers()"><span>All Players</span></a>
 				</div>
 				<div class="col border1 menuitem border-off">
-					<a href="#" id="forwards" class="abtext" onclick="forwards(); return false;"><span>Forwards</span></a>
+					<a href="#" id="forwards" class="abtext"
+						onclick="forwards(); return false;"><span>Forwards</span></a>
 				</div>
 				<div class="col border1 menuitem border-off">
 					<a href="#" id="backs" class="abtext" onclick="backs();"><span>Backs</span></a>
@@ -42,15 +46,16 @@
 <body class="black">
 	<div class="row container-fluid no-gutters body-main">
 		<div class="col">
-			<div class="col border1 abtext your-team brl">
+			<div class="col border1 abtext your-team borderradius">
 				<h3>Your team</h3>
 			</div>
 		</div>
-		<div class="col-9">
-			<div class="col abtext border1 players brrt brrb">
+		<div class="col-sm-9">
+			<div class="col abtext border1 players borderradius">
 				<h3>Players</h3>
 
 				<div id="player_data"></div>
+				<button type="button" data-toggle = "modal" data-target = "#selectModal">SELECT MODALS</button>
 
 			</div>
 		</div>
@@ -79,6 +84,31 @@
 				</div>
 			</div>
 		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+
+					<div class="modal fade" id="selectModal">
+						<div class="modal-dialog">
+							<div class="modal-header">
+								<h3>Welcome to Pick 6!</h3>
+							</div>
+							<div class="modal-body">
+								Select this player or view full profile?
+								<input type="button" class="" value="Select">
+								<input type="button" class="" value="View Profile">
+						</div>
+								<div class="modal-footer">
+									<input type="button" class="openModalbtn" data-dismiss="#selectModal" value="Close">
+						</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
 
 
 
@@ -89,9 +119,6 @@
 
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script>

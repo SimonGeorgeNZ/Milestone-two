@@ -8,6 +8,10 @@
     border-width: .2vw;
 }
 
+.borderradius {
+    border-radius: 10px;
+}
+
 /*-------Border raduis left------*/
 .brl {
     border-top-left-radius: 10px;
@@ -23,6 +27,8 @@
 .brrb {
     border-bottom-right-radius: 10px;
 }
+
+
 
 .black {
     background-color: black;
@@ -149,6 +155,7 @@ html body {
     margin-top: 1.2vw;
     padding-top: .8vw;
     margin: .5vw;
+
 }
 
 .player-select {
@@ -161,6 +168,8 @@ html body {
 .items {
     margin-bottom: .8vw;
 }
+
+
 
 
 
