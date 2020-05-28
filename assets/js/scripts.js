@@ -29,9 +29,12 @@ function createPlayerElements() {
             const div = document.createElement('div');
             const outter = document.createElement('div');
             const select = document.createElement('button');
+            const view = document.createElement('button');
             select.className = 'player-select';
             select.innerHTML = "Select";
             outter.className = 'player-data';
+            view.className = 'view-profile';
+            view.innerHTML = "View Profile";
             div.className = 'items';
             div.innerHTML = "Name:" + " " + d.name +
                 "<br>" + "Position:" + " " + d.type +
@@ -40,18 +43,19 @@ function createPlayerElements() {
             document.getElementById('player_data').appendChild(outter);
             outter.appendChild(div);
             outter.appendChild(select);
+            outter.appendChild(view);
             if (d.type == ['PR'] || d.type == ['L'] || d.type == ['BR'] || d.type == ['HO']) {
                 outter.classList.add('forward');
             } else {
                 outter.classList.add('back');
             };
-            select.onclick = function () {
-                $(".selectModal").modal('show');
-                $(".modal-header h3").text(d.name);
+           select.onclick = function () {
+                console.log(d.name);
             };
         });
     });
 }
+
 
 
 
@@ -96,4 +100,4 @@ function allPlayers() {
     document.getElementById('openModal').style.display = 'hidden';
 } */
 
- 
+
