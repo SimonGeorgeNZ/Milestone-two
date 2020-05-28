@@ -1,4 +1,9 @@
 const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+const playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players";
+const api_key = "/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+
+
+
 
 function getData(cb) {
     var xhr = new XMLHttpRequest();
@@ -40,12 +45,14 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-            select.onclick = function(){
-                $("#selectModal").modal('show');
-            }
+            select.onclick = function () {
+                $(".selectModal").modal('show');
+                $(".modal-header h3").text(d.name);
+            };
         });
     });
 }
+
 
 
 
@@ -59,6 +66,7 @@ $(document).ready(function () {
         sessionStorage.setItem('openModal', true);
     }
 });
+
 
 function forwards() {
     var allPlayers = document.getElementsByClassName('player-data');
@@ -80,9 +88,12 @@ function backs() {
     }
 }
 
+/*
 function allPlayers() {
     var allPlayers = document.getElementsByClassName('player-data');
     for (i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
     document.getElementById('openModal').style.display = 'hidden';
-}
+} */
+
+ 

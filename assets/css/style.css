@@ -163,12 +163,13 @@ html body {
     color: black;
     font-weight: 50;
     margin-bottom: .8vw;
+    display: inline-block;
+    position: relative;
 }
 
 .items {
     margin-bottom: .8vw;
 }
-
 
 
 

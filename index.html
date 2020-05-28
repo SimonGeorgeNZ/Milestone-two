@@ -26,14 +26,13 @@
 			</div>
 			<div class="row menu-nav">
 				<div class="col border1 menuitem border-off">
-					<a href="" id="allPlayers" class="abtext" onclick="allPlayers()"><span>All Players</span></a>
+					<a href="index.html" id="allPlayers" class="abtext"><span>All Players</span></a>
 				</div>
 				<div class="col border1 menuitem border-off">
-					<a href="#" id="forwards" class="abtext"
-						onclick="forwards(); return false;"><span>Forwards</span></a>
+					<a href="#" id="forwards" class="abtext" onclick="forwards()"><span>Forwards</span></a>
 				</div>
 				<div class="col border1 menuitem border-off">
-					<a href="#" id="backs" class="abtext" onclick="backs();"><span>Backs</span></a>
+					<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
 				</div>
 				<div class="col border1 menuitem brrb">
 					<a href="" class="abtext"><span>Your Team</span></a>
@@ -48,6 +47,29 @@
 		<div class="col">
 			<div class="col border1 abtext your-team borderradius">
 				<h3>Your team</h3>
+				<div class="row">
+					<ol id="mySix">
+							<li>
+
+							</li>
+							<li>
+
+							</li>
+							<li>
+
+							</li>
+							<li>
+
+							</li>
+							<li>
+
+							</li>
+							<li>
+
+							</li>
+
+					</ol>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-9">
@@ -55,7 +77,6 @@
 				<h3>Players</h3>
 
 				<div id="player_data"></div>
-				<button type="button" data-toggle = "modal" data-target = "#selectModal">SELECT MODALS</button>
 
 			</div>
 		</div>
@@ -88,26 +109,26 @@
 			<div class="row">
 				<div class="col">
 
-					<div class="modal fade" id="selectModal">
+					<div class="modal fade selectModal">
 						<div class="modal-dialog">
 							<div class="modal-header">
-								<h3>Welcome to Pick 6!</h3>
+								<h3></h3>
 							</div>
 							<div class="modal-body">
 								Select this player or view full profile?
-								<input type="button" class="" value="Select">
-								<input type="button" class="" value="View Profile">
-						</div>
-								<div class="modal-footer">
-									<input type="button" class="openModalbtn" data-dismiss="#selectModal" value="Close">
-						</div>
-
-								</div>
 							</div>
+							<div class="modal-footer">
+								<input type="button" class="addToTeam" value="Select">
+								<input type="button" class="" value="View Profile">
+								<input type="button" class="openModalbtn" data-dismiss="#selectModal" value="Close">
+						    </div>
 
+							</div>
 						</div>
+
 					</div>
 				</div>
+			</div>
 
 
 
