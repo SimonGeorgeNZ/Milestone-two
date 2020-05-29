@@ -49,9 +49,15 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-           select.onclick = function () {
-                console.log(d.name);
-            };
+            select.onclick = function () {
+                const selPlayer = document.createElement("li")
+                const delPlayer = document.createElement('input')
+                selPlayer.className = 'selectedPayer';
+                selPlayer.innerHTML = d.name;
+                delPlayer.setAttribute('type', 'radio');
+                document.getElementById("mySix").appendChild(selPlayer);
+                selPlayer.innerHTML = delPlayer;
+            }
         });
     });
 }
