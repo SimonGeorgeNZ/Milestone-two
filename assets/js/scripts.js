@@ -53,14 +53,20 @@ function createPlayerElements() {
                 const selPlayer = document.createElement("li")
                 const delPlayer = document.createElement('input')
                 selPlayer.className = 'selectedPayer';
+                delPlayer.className = 'deletePlayer';
                 selPlayer.innerHTML = d.name;
                 delPlayer.setAttribute('type', 'radio');
-                document.getElementById("mySix").appendChild(selPlayer);
-                selPlayer.innerHTML = delPlayer;
+                document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
+                document.getElementById('player_data').removeChild(outter);
+
             }
+
+
         });
     });
 }
+
+
 
 
 
@@ -98,12 +104,12 @@ function backs() {
     }
 }
 
-/*
+
 function allPlayers() {
     var allPlayers = document.getElementsByClassName('player-data');
     for (i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
     document.getElementById('openModal').style.display = 'hidden';
-} */
+} 
 
 

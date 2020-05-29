@@ -116,7 +116,7 @@ html body {
 /*--------------------------------------------Body*/
 
 
-.your-team {
+.your-team h3 {
     text-align: center;
 }
 
@@ -187,4 +187,26 @@ html body {
     color: white;
     border-radius: 3px;
     cursor: pointer;
+}
+
+/*--------------------------------------------My Team*/
+
+.deletePlayer {
+    display: inline-block;
+    margin-left: 3vw;
+}
+
+#mySix {
+    display: inline-block;
+    font-size: 2vw;
+    padding-left: .3vw;
+    
+}
+
+.selectedPayer {
+    position: relative;
+    margin-left: 2vw;
+    list-style-type: decimal;
+    list-style-position: inside;
+    display: list-item;
 }
