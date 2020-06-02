@@ -22,6 +22,7 @@ function getData(cb) {
 function createPlayerElements() {
     getData(function (data) {
         data = data.players;
+        let num = 0;
 
         data.forEach(function (d) {
             console.log(d);
@@ -49,28 +50,46 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-            select.onclick = function () {
-                const selPlayer = document.createElement("li")
-                const delPlayer = document.createElement('input')
-                selPlayer.className = 'selectedPayer';
-                delPlayer.className = 'deletePlayer';
-                selPlayer.innerHTML = d.name;
-                delPlayer.setAttribute('type', 'radio');
-                document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
-                document.getElementById('player_data').removeChild(outter);
+            
+            
 
+                select.onclick = function () {
+                    if (num < 6) {
+                        console.log(num)
+
+                        const selPlayer = document.createElement("li")
+                        const delPlayer = document.createElement('input')
+                        selPlayer.className = 'selectedPayer';
+                        delPlayer.className = 'deletePlayer';
+                        selPlayer.innerHTML = d.name;
+                        delPlayer.setAttribute('type', 'checkbox');
+                        delPlayer.setAttribute('checked', 'checked');
+                        document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
+                        document.getElementById('player_data').removeChild(outter);
+
+                        
+
+                        delPlayer.onclick = function () {
+                            document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
+                            document.getElementById('player_data').appendChild(outter);
+                            outter.appendChild(div);
+                            outter.appendChild(select);
+                            outter.appendChild(view);
+                            num--;
+                    }
+                    num++;
+                    if (num==6){
+                        
+                        $("#enough").modal('show');
+                    }
+                
+                
+                }
+                    
             }
-
-
         });
     });
 }
-
-
-
-
-
-
 
 
 
@@ -110,6 +129,6 @@ function allPlayers() {
     for (i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
     document.getElementById('openModal').style.display = 'hidden';
-} 
+}
 
 
