@@ -26,15 +26,15 @@ function createPlayerElements() {
 
         data.forEach(function (d) {
             console.log(d);
-            document.getElementById('player_data');
-            const div = document.createElement('div');
-            const outter = document.createElement('div');
-            const select = document.createElement('button');
-            const view = document.createElement('button');
+            document.getElementById('player_data')
+            const div = document.createElement('div')
+            const outter = document.createElement('div')
+            const select = document.createElement('button')
+            const view = document.createElement('button')
             select.className = 'player-select';
             select.innerHTML = "Select";
             outter.className = 'player-data';
-            view.className = 'view-profile';
+            view.className = 'viewProfile';
             view.innerHTML = "View Profile";
             div.className = 'items';
             div.innerHTML = "Name:" + " " + d.name +
@@ -50,42 +50,49 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-            
-            
+            view.onclick = function () {
+                alert('yes')
+            }
 
-                select.onclick = function () {
-                    if (num < 6) {
-                        console.log(num)
 
-                        const selPlayer = document.createElement("li")
-                        const delPlayer = document.createElement('input')
-                        selPlayer.className = 'selectedPayer';
-                        delPlayer.className = 'deletePlayer';
-                        selPlayer.innerHTML = d.name;
-                        delPlayer.setAttribute('type', 'checkbox');
-                        delPlayer.setAttribute('checked', 'checked');
-                        document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
-                        document.getElementById('player_data').removeChild(outter);
 
-                        
 
-                        delPlayer.onclick = function () {
-                            document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
-                            document.getElementById('player_data').appendChild(outter);
-                            outter.appendChild(div);
-                            outter.appendChild(select);
-                            outter.appendChild(view);
-                            num--;
+
+            select.onclick = function () {
+                if (num < 6) {
+                    console.log(num)
+
+                    const selPlayer = document.createElement("li")
+                    const delPlayer = document.createElement('input')
+                    const selPlayDiv = document.createElement('div')
+                    selPlayer.className = 'selectedPayer';
+                    delPlayer.className = 'deletePlayer';
+                    selPlayDiv.className = 'selPlayDiv';
+                    selPlayer.innerHTML = d.name;
+                    delPlayer.setAttribute('type', 'checkbox');
+                    delPlayer.setAttribute('checked', 'checked');
+                    document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
+                    document.getElementById('player_data').removeChild(outter);
+
+
+
+                    delPlayer.onclick = function () {
+                        document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
+                        document.getElementById('player_data').appendChild(outter);
+                        outter.appendChild(div);
+                        outter.appendChild(select);
+                        outter.appendChild(view);
+                        num--;
                     }
                     num++;
-                    if (num==6){
-                        
+                    if (num == 6) {
                         $("#enough").modal('show');
                     }
-                
-                
+
+
                 }
-                    
+
+
             }
         });
     });

@@ -212,3 +212,46 @@ html body {
     list-style-position: inside;
     display: list-item;
 }
+
+/*--------------------------------------------My Team*/
+
+.social-but {
+    font-size: 3vw;
+    color: white;
+    margin-left: 25%;
+    display: inline-block;
+}
+
+.footer {
+    padding-left: .8vw;
+    padding-right: .8vw;
+    float: right;
+    width: 75%;
+    margin-right: 0!important;
+    margin-top: .8vw;
+}
+
+.thanks {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8vw;
+    color: white;
+    padding-top: .8vw;
+    font-weight: 600;
+    justify-content: center;
+    height: 3.2vw;
+}
+
+
+/*--------------------------------------------Media Queries*/
+
+@media(max-width: 576px) {
+    .footer {
+        width: 100%;
+    }
+
+    .thanks {
+       font-size: 1vw; 
+    }
+
+}
+
