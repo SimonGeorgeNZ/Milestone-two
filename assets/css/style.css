@@ -148,13 +148,13 @@ html body {
     border-width: .2vw;
     font-size: 1.3vw;
     color: white;
-    max-height: 40vh;
     width: 19vw;
     display: inline-block;
     border-radius: 10px;
     margin-top: 1.2vw;
     padding-top: .8vw;
     margin: .5vw;
+    position: relative;
 
 }
 
@@ -162,15 +162,28 @@ html body {
     background-color: white;
     color: black;
     font-weight: 50;
-    margin-bottom: .8vw;
     display: inline-block;
     position: relative;
     margin: .8vw;
 }
 
-.items {
-    margin-bottom: .8vw;
+.player-select:hover {
+    color: blue;
+    cursor: pointer;
+    text-decoration-line: underline;
 }
+
+
+
+.viewProfile a {
+    background-color: white;
+    color: black;
+}
+
+.viewProfile a:hover {
+    color: blue;
+}
+
 
 
 
@@ -241,6 +254,14 @@ html body {
     height: 3.2vw;
 }
 
+.myTeamfooter {
+    padding-left: .8vw;
+    padding-right: .8vw;
+    margin-right: 0!important;
+    margin-left: 0!important;
+    margin-top: .8vw;
+}
+
 
 /*--------------------------------------------Media Queries*/
 
@@ -252,6 +273,11 @@ html body {
     .thanks {
        font-size: 1vw; 
     }
-
+    .selectedPayer {
+        display: inline;
+    }
+    .viewProfile {
+        margin-bottom: .5vw;
+    }
 }
 

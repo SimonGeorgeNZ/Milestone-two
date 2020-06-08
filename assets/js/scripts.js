@@ -35,7 +35,7 @@ function createPlayerElements() {
             select.innerHTML = "Select";
             outter.className = 'player-data';
             view.className = 'viewProfile';
-            view.innerHTML = "View Profile";
+            view.innerHTML = '<a href="playerProfile.html">View Profile</a>';
             div.className = 'items';
             div.innerHTML = "Name:" + " " + d.name +
                 "<br>" + "Position:" + " " + d.type +
@@ -50,9 +50,8 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-            view.onclick = function () {
-                alert('yes')
-            }
+            
+
 
 
 
@@ -75,7 +74,6 @@ function createPlayerElements() {
                     document.getElementById('player_data').removeChild(outter);
 
 
-
                     delPlayer.onclick = function () {
                         document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
                         document.getElementById('player_data').appendChild(outter);
@@ -88,11 +86,7 @@ function createPlayerElements() {
                     if (num == 6) {
                         $("#enough").modal('show');
                     }
-
-
                 }
-
-
             }
         });
     });
