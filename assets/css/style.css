@@ -175,13 +175,14 @@ html body {
 
 
 
-.viewProfile a {
+.viewProfile {
     background-color: white;
     color: black;
 }
 
-.viewProfile a:hover {
+.viewProfile:hover {
     color: blue;
+    text-decoration-line: underline;
 }
 
 
@@ -218,7 +219,7 @@ html body {
     
 }
 
-.selectedPayer {
+.selectedPlayer {
     position: relative;
     margin-left: .7vw;
     list-style-type: decimal;
@@ -260,6 +261,13 @@ html body {
     margin-right: 0!important;
     margin-left: 0!important;
     margin-top: .8vw;
+}
+
+
+/*--------------------------------------------My Team*/
+
+.playerProfile {
+    text-align: center;
 }
 
 

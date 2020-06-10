@@ -1,4 +1,9 @@
 const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
+let api_key = "/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+let player_ID;
+
+
 
 
 
@@ -29,11 +34,12 @@ function createPlayerElements() {
             const outter = document.createElement('div')
             const select = document.createElement('button')
             const view = document.createElement('button')
+            var player_ID = d.id
             select.className = 'player-select';
             select.innerHTML = "Select";
             outter.className = 'player-data';
             view.className = 'viewProfile';
-            view.innerHTML = '<a href="playerProfile.html">View Profile</a>';
+            view.innerHTML = 'View Profile';
             div.className = 'items';
             div.innerHTML = "Name:" + " " + d.name +
                 "<br>" + "Position:" + " " + d.type +
@@ -49,28 +55,7 @@ function createPlayerElements() {
                 outter.classList.add('back');
             };
 
-            const playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players";
-            const api_key = "/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
-            const player_ID = d.id;
-            const fullPLayerURL = playerURL+player_ID+api_key;
 
-
-            view.onclick = function () {
-                function getPlayerData(cb) {
-                    var xhr = new XMLHttpRequest();
-
-                    xhr.open("GET", fullPLayerURL);
-                    xhr.send();
-
-                    xhr.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            cb(JSON.parse(this.responseText));
-                        }
-                    };
-                }
-                
-            }
-            
 
             select.onclick = function () {
                 if (num < 6) {
@@ -79,7 +64,7 @@ function createPlayerElements() {
                     const selPlayer = document.createElement("li")
                     const delPlayer = document.createElement('input')
                     const selPlayDiv = document.createElement('div')
-                    selPlayer.className = 'selectedPayer';
+                    selPlayer.className = 'selectedPlayer';
                     delPlayer.className = 'deletePlayer';
                     selPlayDiv.className = 'selPlayDiv';
                     selPlayer.innerHTML = d.name;
@@ -101,11 +86,37 @@ function createPlayerElements() {
                     if (num == 6) {
                         $("#enough").modal('show');
                     }
+
                 }
+
+
             }
-        });
+            view.onclick = function () {
+                console.log(player_ID)
+                const fullPlayerURL = playerURL + player_ID + api_key;
+                console.log(fullPlayerURL)
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open("GET", fullPlayerURL);
+                xhr.send();
+
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        (JSON.parse(this.responseText));
+                        console.log(this.responseText)
+                    }
+                }
+
+            }
+
+        }
+        );
     });
 }
+
+
+
 
 
 
@@ -146,5 +157,7 @@ function allPlayers() {
         allPlayers[i].style.display = '';
     document.getElementById('openModal').style.display = 'hidden';
 }
+
+
 
 
