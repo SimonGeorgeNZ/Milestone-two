@@ -39,8 +39,10 @@ function createPlayerElements() {
             select.innerHTML = "Select";
             outter.className = 'player-data';
             view.className = 'viewProfile';
+            view.id = player_ID;
             view.innerHTML = 'View Profile';
             div.className = 'items';
+            view.onclick = (getPlayerData)
             div.innerHTML = "Name:" + " " + d.name +
                 "<br>" + "Position:" + " " + d.type +
                 "<br>" + "Height:" + " " + d.height +
@@ -54,6 +56,7 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
+
 
 
 
@@ -91,31 +94,34 @@ function createPlayerElements() {
 
 
             }
-            view.onclick = function () {
-                console.log(player_ID)
-                const fullPlayerURL = playerURL + player_ID + api_key;
-                console.log(fullPlayerURL)
 
-                var xhr = new XMLHttpRequest();
-
-                xhr.open("GET", fullPlayerURL);
-                xhr.send();
-
-                xhr.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        (JSON.parse(this.responseText));
-                        console.log(this.responseText)
-                    }
-                }
-
-            }
 
         }
         );
     });
 }
 
+const fullPlayerURL = playerURL + player_ID + api_key;
 
+
+
+function getPlayerData() {
+    console.log(this.id)
+    const fullPlayerURL = playerURL + this.id + api_key;
+    console.log(fullPlayerURL)
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", fullPlayerURL);
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            (JSON.parse(this.responseText));
+            console.log(this.responseText)
+        }
+    }
+}
 
 
 
