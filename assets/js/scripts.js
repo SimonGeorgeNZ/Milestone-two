@@ -2,7 +2,7 @@ const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/r
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
 let api_key = "/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
 let player_ID;
-
+let playerDetails;
 
 
 
@@ -22,13 +22,15 @@ function getData(cb) {
 }
 
 
+
+
 function createPlayerElements() {
     getData(function (data) {
         data = data.players;
         let num = 0;
 
         data.forEach(function (d) {
-            console.log(d);
+            console.log(d)
             document.getElementById('player_data')
             const div = document.createElement('div')
             const outter = document.createElement('div')
@@ -101,15 +103,11 @@ function createPlayerElements() {
     });
 }
 
-const fullPlayerURL = playerURL + player_ID + api_key;
-
-
-
 function getPlayerData() {
-    console.log(this.id)
-    const fullPlayerURL = playerURL + this.id + api_key;
-    console.log(fullPlayerURL)
 
+    const fullPlayerURL = playerURL + this.id + api_key;
+    console.log(fullPlayerURL);
+    console.log(this.id);
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", fullPlayerURL);
@@ -117,23 +115,28 @@ function getPlayerData() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            (JSON.parse(this.responseText));
-            console.log(this.responseText)
+            p = JSON.parse(this.responseText);
+            document.querySelector('#playerName').textContent = "Name:" + " " + p.player.name;
+            document.querySelector('#RWC2019tries').textContent = "RWC 2019 tries:" + " " + p.statistics.seasons[0].statistics.tries;
+            console.log(p.statistics.seasons[0].statistics.tries)
         }
-    }
+
+    };
+
 }
 
 
 
 
-$(document).ready(function () {
+
+$(document).ready = function () {
     if (typeof Storage != "undefined") {
         if (!sessionStorage.getItem('openModal')) {
             $("#openModal").modal('show');
         }
         sessionStorage.setItem('openModal', true);
     }
-});
+};
 
 
 function forwards() {

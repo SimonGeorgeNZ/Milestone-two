@@ -46,6 +46,11 @@
     color: white;
 }
 
+.abtextplain {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 html body {
     height: 100%;
 }
@@ -149,7 +154,6 @@ html body {
 /*--------------------------------------------Data*/
 
 #player_data {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: black;
 }
 
@@ -183,8 +187,6 @@ html body {
     cursor: pointer;
     text-decoration-line: underline;
 }
-
-
 
 .viewProfile {
     background-color: white;
@@ -230,7 +232,6 @@ html body {
     display: inline-block;
     font-size: 1.5vw;
     font-weight: 100!important;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     padding-left: 1.3vw;
     
@@ -246,6 +247,11 @@ html body {
 .selected {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.playerProfileInner {
+    text-align: left;
+    margin-left: 1vw;
 }
 
 /*--------------------------------------------Footer*/
@@ -267,7 +273,6 @@ html body {
 }
 
 .thanks {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: .8vw;
     color: white;
     padding-top: .8vw;
