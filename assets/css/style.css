@@ -91,11 +91,11 @@ html body {
 .menuitem {
     padding: 0!important;
     text-align: center;
-    font-size: 2vw;
+    font-size: 2.2vw;
 }
 
 .menu-nav {
-    max-height: 4vw;
+    min-height: 5vw;
 }
 
 .menuitem a {
@@ -105,6 +105,7 @@ html body {
 .menuitem span {
     width: 100%;
     display: block;
+    padding-top: 4%;
 }
 
 .border-off {
@@ -118,12 +119,18 @@ html body {
 
 .your-team h3 {
     text-align: center;
+    padding-top: 1.3vw;
 }
+
 
 .players {
     text-align: center;
     display: inline-block;
     padding-left: 15px;
+}
+
+.players h3 {
+    padding-top: 1vw;
 }
 
 .body-main {
@@ -133,6 +140,10 @@ html body {
 .body-main h3 {
     font-size: 3.5vw;
 }
+
+
+
+
 
 
 /*--------------------------------------------Data*/
@@ -164,7 +175,7 @@ html body {
     font-weight: 50;
     display: inline-block;
     position: relative;
-    margin: .8vw;
+    margin-right: 1.5vw;
 }
 
 .player-select:hover {
@@ -178,6 +189,8 @@ html body {
 .viewProfile {
     background-color: white;
     color: black;
+    margin-bottom: 1.5vw;
+    margin-top: 1vw;
 }
 
 .viewProfile:hover {
@@ -208,26 +221,34 @@ html body {
 
 .deletePlayer {
     display: inline-block;
-    margin-left: 2.5vw;
+    margin-left: 1.5vw;
     cursor: pointer;
+    height: 1.3vw;
 }
 
 #mySix {
     display: inline-block;
     font-size: 1.5vw;
-    padding-left: .3vw;
+    font-weight: 100!important;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding-left: 1.3vw;
     
 }
 
 .selectedPlayer {
     position: relative;
-    margin-left: .7vw;
     list-style-type: decimal;
     list-style-position: inside;
     display: list-item;
 }
 
-/*--------------------------------------------My Team*/
+.selected {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*--------------------------------------------Footer*/
 
 .social-but {
     font-size: 3vw;
@@ -264,10 +285,16 @@ html body {
 }
 
 
-/*--------------------------------------------My Team*/
+/*--------------------------------------------Player Profile*/
 
 .playerProfile {
     text-align: center;
+    width: 100%
+}
+
+.playerProfile h3 {
+    font-size: 2.8vw;
+    padding-top: 1.3vw;
 }
 
 
@@ -284,8 +311,27 @@ html body {
     .selectedPayer {
         display: inline;
     }
-    .viewProfile {
-        margin-bottom: .5vw;
+
+    .your-team {
+        width: 30%;
     }
+
+    .playerProfile {
+        width: 70%;
+    }
+
+    .players {
+        margin-top: 1vw;
+    }
+
+    .player-data {
+        width: 27vw;
+        font-size: 1.9vw;
+    }
+    
+    .viewProfile {
+        margin-top: 1.5vw;
+    }
+
 }
 
