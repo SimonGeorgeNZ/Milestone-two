@@ -1,6 +1,6 @@
-const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=ffeptjub472nfnf8ywnnyrf4";
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
-let api_key = "/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+let api_key = "/profile.json?api_key=ffeptjub472nfnf8ywnnyrf4";
 let player_ID;
 let playerDetails;
 
@@ -42,7 +42,7 @@ function createPlayerElements() {
             outter.className = 'player-data';
             view.className = 'viewProfile';
             view.id = player_ID;
-            view.innerHTML = 'View Profile';
+            view.innerHTML = 'View';
             div.className = 'items';
             view.onclick = (getPlayerData)
             div.innerHTML = "Name:" + " " + d.name +
@@ -103,6 +103,8 @@ function createPlayerElements() {
     });
 }
 
+
+
 function getPlayerData() {
 
     const fullPlayerURL = playerURL + this.id + api_key;
@@ -116,9 +118,16 @@ function getPlayerData() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             p = JSON.parse(this.responseText);
-            document.querySelector('#playerName').textContent = "Name:" + " " + p.player.name;
-            document.querySelector('#RWC2019tries').textContent = "RWC 2019 tries:" + " " + p.statistics.seasons[0].statistics.tries;
-            console.log(p.statistics.seasons[0].statistics.tries)
+            document.querySelector('#playerProfileName').textContent = p.player.name;
+            for (i = 0; i < p.statistics.seasons.length; i++) {
+                if (p.statistics.seasons[i].id === "sr:season:59616") {
+                    document.querySelector('#RWC2019games').textContent = "RWC 2019 matches:" + " " +  p.statistics.seasons[i].statistics.matches_played
+                    document.querySelector('#RWC2019tries').textContent = "RWC 2019 tries:" + " " +  p.statistics.seasons[i].statistics.tries
+                }
+                
+            }
+
+
         }
 
     };

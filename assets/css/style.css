@@ -204,6 +204,8 @@ html body {
 
 
 
+
+
 /*--------------------------------------------Modals*/
 
 .modal-dialog {
@@ -252,6 +254,13 @@ html body {
 .playerProfileInner {
     text-align: left;
     margin-left: 1vw;
+    font-size: 1.5vw;
+    padding-bottom: 1vw;
+}
+
+.playerProfileInner p {
+    margin-bottom: .3vw;
+    padding-left: 1vw;
 }
 
 /*--------------------------------------------Footer*/
@@ -327,6 +336,8 @@ html body {
 
     .players {
         margin-top: 1vw;
+        padding-right: 0!important;
+        padding-left: 0!important;
     }
 
     .player-data {
