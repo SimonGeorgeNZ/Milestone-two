@@ -44,6 +44,7 @@
 .abtext {
     font-family: 'all-blacks';
     color: white;
+    text-align: center;
 }
 
 .abtextplain {
@@ -81,21 +82,12 @@ html body {
 
 .title h1 {
     display: inline;
-    text-align: center;
-    width: 100%;
     font-size: 6vw;
-}
-
-.title h2 {
-    display: inline;
-    text-align: center;
     width: 100%;
-    font-size: 4vw;
 }
 
 .menuitem {
     padding: 0!important;
-    text-align: center;
     font-size: 2.2vw;
 }
 
@@ -123,7 +115,6 @@ html body {
 
 
 .your-team h3 {
-    text-align: center;
     padding-top: 1.3vw;
 }
 
@@ -144,6 +135,10 @@ html body {
 
 .body-main h3 {
     font-size: 3.5vw;
+}
+
+.playerProfileInner h4 {
+    font-size: 2vw;
 }
 
 
@@ -253,15 +248,18 @@ html body {
 
 .playerProfileInner {
     text-align: left;
-    margin-left: 1vw;
-    font-size: 1.5vw;
+    margin-left: .7vw;
+    margin-right: 1vw;
+    font-size: 1.7vw;
     padding-bottom: 1vw;
+    list-style-type: none;
 }
 
 .playerProfileInner p {
     margin-bottom: .3vw;
     padding-left: 1vw;
 }
+
 
 /*--------------------------------------------Footer*/
 
@@ -348,6 +346,26 @@ html body {
     .viewProfile {
         margin-top: 1.5vw;
     }
+
+    .playerProfileInner {
+        padding-right: 0!important;
+        column-count: 2;
+        column-gap: .3vw;
+        
+    }
+
+    .playerProfileInner p {
+        max-width: 85%;
+        padding-left: 2.5vw;
+    }
+
+    .playerProfileInner h4 {
+        text-align: left;
+        padding-left: 2.5vw;
+        padding-top: 1.5vw;
+        
+    }
+    
 
 }
 
