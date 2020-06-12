@@ -123,25 +123,35 @@ function getPlayerData() {
             for (i = 0; i < p.statistics.seasons.length; i++) {
                 if (p.statistics.seasons[i].id === "sr:season:59616") {
                     //Rugby World Cup 2019
-                    document.querySelector('#RWC2019games').textContent = "RWC 2019 matches:" + " " +  p.statistics.seasons[i].statistics.matches_played
-                    document.querySelector('#RWC2019tries').textContent = "RWC 2019 tries:" + " " +  p.statistics.seasons[i].statistics.tries
-                    document.querySelector('#RWC2019yellow').textContent = "RWC 2019 yellow cards:" + " " +  p.statistics.seasons[i].statistics.yellow_cards
-                    document.querySelector('#RWC2019red').textContent = "RWC 2019 red cards:" + " " +  p.statistics.seasons[i].statistics.red_cards
-                    document.querySelector('#RWC2019penalty').textContent = "RWC 2019 penalty goals:" + " " +  p.statistics.seasons[i].statistics.penalty_goals_successful
-                    document.querySelector('#RWC2019conversions').textContent = "RWC 2019 conversions:" + " " +  p.statistics.seasons[i].statistics.conversions_successful
+                    document.querySelector('#RWC2019games').textContent = "RWC 2019 matches:" + " " + p.statistics.seasons[i].statistics.matches_played
+                    document.querySelector('#RWC2019tries').textContent = "RWC 2019 tries:" + " " + p.statistics.seasons[i].statistics.tries
+                    document.querySelector('#RWC2019yellow').textContent = "RWC 2019 yellow cards:" + " " + p.statistics.seasons[i].statistics.yellow_cards
+                    document.querySelector('#RWC2019red').textContent = "RWC 2019 red cards:" + " " + p.statistics.seasons[i].statistics.red_cards
+                    document.querySelector('#RWC2019penalty').textContent = "RWC 2019 penalty goals:" + " " + p.statistics.seasons[i].statistics.penalty_goals_successful
+                    document.querySelector('#RWC2019conversions').textContent = "RWC 2019 conversions:" + " " + p.statistics.seasons[i].statistics.conversions_successful
                 }
-                
+
             }
             //Super Rugby 2019
-            document.querySelector('#superTeam').textContent = "Current super rugby team:" + " " +  p.roles[0].competitor.name
+            document.querySelector('#superTeam').textContent = "Current super rugby team:" + " " + p.roles[0].competitor.name
             for (i = 0; i < p.statistics.seasons.length; i++) {
                 if (p.statistics.seasons[i].id === "sr:season:59620") {
-                    document.querySelector('#superGames').textContent = "Super 2019 matches:" + " " +  p.statistics.seasons[i].statistics.matches_played
-                    document.querySelector('#superTries').textContent = "Super 2019 matches:" + " " +  p.statistics.seasons[i].statistics.tries
-                    document.querySelector('#SuperYellow').textContent = "Super 2019 matches:" + " " +  p.statistics.seasons[i].statistics.yellow_cards
-                    document.querySelector('#superRed').textContent = "Super 2019 matches:" + " " +  p.statistics.seasons[i].statistics.red_cards
-                    document.querySelector('#superPenatly').textContent = "Super 2019 matches:" + " " +  p.statistics.seasons[i].statistics.penalty_goals_successful
-                    document.querySelector('#superConversions').textContent = "Super 2019 conversions:" + " " +  p.statistics.seasons[i].statistics.conversions_successful
+                    document.querySelector('#superGames').textContent = "Super 2019 matches:" + " " + p.statistics.seasons[i].statistics.matches_played
+                    document.querySelector('#superTries').textContent = "Super 2019 tries:" + " " + p.statistics.seasons[i].statistics.tries
+                    document.querySelector('#SuperYellow').textContent = "Super 2019 yellow cards:" + " " + p.statistics.seasons[i].statistics.yellow_cards
+                    document.querySelector('#superRed').textContent = "Super 2019 red cards:" + " " + p.statistics.seasons[i].statistics.red_cards
+                    document.querySelector('#superPenatly').textContent = "Super 2019 penalty goals:" + " " + p.statistics.seasons[i].statistics.penalty_goals_successful
+                    document.querySelector('#superConversions').textContent = "Super 2019 conversions:" + " " + p.statistics.seasons[i].statistics.conversions_successful
+                }
+            }
+            for (i = 0; i < p.statistics.seasons.length; i++) {
+                if (p.statistics.seasons[i].id === "sr:season:67631") {
+                    document.querySelector('#RC2019Games').textContent = "Rugby Championship 2019 matches:" + " " + p.statistics.seasons[i].statistics.matches_played
+                    document.querySelector('#RC2019Tries').textContent = "Rugby Championship 2019 tries:" + " " + p.statistics.seasons[i].statistics.tries
+                    document.querySelector('#RC2019Yellow').textContent = "Rugby Championship 2019 yellow cards:" + " " + p.statistics.seasons[i].statistics.yellow_cards
+                    document.querySelector('#RC2019Red').textContent = "Rugby Championship 2019 red cards:" + " " + p.statistics.seasons[i].statistics.red_cards
+                    document.querySelector('#RC2019conversions').textContent = "Rugby Championship 2019 conversions:" + " " + p.statistics.seasons[i].statistics.penalty_goals_successful
+                    document.querySelector('#RC2019Penalty').textContent = "Rugby Championship 2019 penalty goals:" + " " + p.statistics.seasons[i].statistics.conversions_successful
                 }
             }
 
