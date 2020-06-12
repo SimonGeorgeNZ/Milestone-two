@@ -137,11 +137,6 @@ html body {
     font-size: 3.5vw;
 }
 
-.playerProfileInner h4 {
-    font-size: 2vw;
-}
-
-
 
 
 
@@ -250,14 +245,17 @@ html body {
     text-align: left;
     margin-left: .7vw;
     margin-right: 1vw;
-    font-size: 1.7vw;
+    font-size: 1.3vw;
     padding-bottom: 1vw;
-    list-style-type: none;
 }
 
 .playerProfileInner p {
     margin-bottom: .3vw;
     padding-left: 1vw;
+}
+
+.playerProfileInner h4 {
+    font-size: 2vw;
 }
 
 
@@ -306,6 +304,10 @@ html body {
 
 .playerProfile h3 {
     font-size: 2.8vw;
+    padding-top: 1.3vw;
+}
+
+.playerProfile h4 {
     padding-top: 1.3vw;
 }
 
@@ -362,10 +364,12 @@ html body {
     .playerProfileInner h4 {
         text-align: left;
         padding-left: 2.5vw;
-        padding-top: 1.5vw;
         
     }
-    
-
+    .playerProfileInner h4:first-child  {
+        padding-top: 0!important;
+    }
 }
+
+
 
