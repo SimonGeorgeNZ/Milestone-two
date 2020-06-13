@@ -77,7 +77,15 @@ function createPlayerElements() {
                     delPlayer.setAttribute('checked', 'checked');
                     document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
                     select.style.display = 'none'
+                    num++;
+                    var arrayOfElements = document.getElementsByClassName('player-select')
+                    if (num === 6) {
+                        $("#enough").modal('show');
+                        for (var i = 0; i < arrayOfElements.length; i++) {
+                            arrayOfElements[i].style.display = 'none';
+                        }
 
+                    }
 
 
 
@@ -85,11 +93,9 @@ function createPlayerElements() {
                         document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
                         select.style.display = 'inline'
                         num--;
+                        
                     }
-                    num++;
-                    if (num == 6) {
-                        $("#enough").modal('show');
-                    }
+
                 }
             }
         });
@@ -161,7 +167,7 @@ function getPlayerData() {
                     document.querySelector('#super20Red').textContent = "- Red cards:" + " " + p.statistics.seasons[i].statistics.red_cards
                     document.querySelector('#super20Penatly').textContent = "- Penalty goals:" + " " + p.statistics.seasons[i].statistics.penalty_goals_successful
                     document.querySelector('#super20Conversions').textContent = "- Conversions:" + " " + p.statistics.seasons[i].statistics.conversions_successful
-                
+
                 }
             }
 

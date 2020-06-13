@@ -218,6 +218,7 @@ html body {
     margin-left: 1.5vw;
     cursor: pointer;
     height: 1.3vw;
+    float: right;
 }
 
 #mySix {
