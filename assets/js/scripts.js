@@ -4,6 +4,7 @@ let api_key = "/profile.json?api_key=ffeptjub472nfnf8ywnnyrf4";
 let player_ID;
 let playerDetails;
 let playerArray = [];
+let fullPlayerList = [];
 
 
 
@@ -31,6 +32,7 @@ function createPlayerElements() {
         let num = 0;
 
         data.forEach(function (d) {
+            
             console.log(d)
             document.getElementById('player_data')
             const div = document.createElement('div')
@@ -38,6 +40,7 @@ function createPlayerElements() {
             const select = document.createElement('button')
             const view = document.createElement('button')
             var player_ID = d.id
+            fullPlayerList.push(d.name);
             select.className = 'player-select';
             select.innerHTML = "Select";
             select.id = d.name;
@@ -60,7 +63,8 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-
+            
+            
 
 
 
@@ -81,7 +85,11 @@ function createPlayerElements() {
                     select.style.display = 'none'
                     num++;
                     playerArray.push(d.name)
-                    var arrayOfElements = document.getElementById(d.name)
+                    var fullIndex = fullPlayerList.indexOf(d.name);
+                    if (fullIndex > -1) {
+                            fullPlayerList.splice(fullIndex, 1);
+                        }
+                    var arrayOfElements = document.getElementsByClassName('player-select')
                     if (num === 6) {
                         $("#enough").modal('show');
                         for (var i = 0; i < arrayOfElements.length; i++) {
@@ -101,13 +109,11 @@ function createPlayerElements() {
                         if (index > -1) {
                             playerArray.splice(index, 1);
                         }
+                        fullPlayerList.push(d.name)
                         if (num === 5) {
-                            for (var i = 0; i < arrayOfElements.length; i++) {
-                                arrayOfElements[i].style.display = 'inline';
+                            for (i = 0; i < fullPlayerList.length; i++) {
+                                document.getElementById(fullPlayerList[i]).style.display = 'inline'
                             }
-                        }
-                        for (var i = 0; i < playerArray; i++) {
-                            playerArray[i].select.style.display = 'none'
                         }
 
                     }

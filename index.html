@@ -37,7 +37,7 @@
 					<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
 				</div>
 				<div class="col border1 menuitem brrb">
-					<a href="myTeam.html" class="abtext"><span>Your Team</span></a>
+					<a href="" class="abtext" data-toggle="modal" data-target="#myTeam"><span>Your Team</span></a>
 				</div>
 			</div>
 		</div>
@@ -82,7 +82,7 @@
 							<p id="RC2019Red"></p>
 							<p id="RC2019conversions"></p>
 							<p id="RC2019Penalty"></p>
-                            <h4 id="super2020" class="abtext"></h4>
+							<h4 id="super2020" class="abtext"></h4>
 							<p id="super20Team"></p>
 							<p id="super20Games"></p>
 							<p id="super20Tries"></p>
@@ -158,22 +158,47 @@
 
 </script>
 <div class="container">
+	<div class="row">
+		<div class="col">
+
+			<div class="modal fade" id="openModal">
+				<div class="modal-dialog">
+					<div class="modal-header">
+						<h3>Welcome to Pick 6!</h3>
+					</div>
+					<div class="modal-body">
+						Spend time browsing your favourite All Blacks players, using the select button to see
+						their
+						full profile of stats.
+						Combine 6 together to and visit the My Team page to see combined stats and fun facts.
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="openModalbtn" data-dismiss="#openModal" value="Close">
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col">
 
-				<div class="modal fade" id="openModal">
+				<div class="modal fade" id="enough">
 					<div class="modal-dialog">
 						<div class="modal-header">
-							<h3>Welcome to Pick 6!</h3>
+							<h3>You've picked your six</h3>
 						</div>
 						<div class="modal-body">
-							Spend time browsing your favourite All Blacks players, using the select button to see
-							their
-							full profile of stats.
-							Combine 6 together to and visit the My Team page to see combined stats and fun facts.
+							You've got six players in your list! If you want to add anyone else, you'll have to
+							remove someone by unchecking the box next to
+							their name to pick any more.
 						</div>
 						<div class="modal-footer">
-							<input type="button" class="openModalbtn" data-dismiss="#openModal" value="Close">
+							<input type="button" class="openModalbtn" data-dismiss="#enough" value="Close">
 						</div>
 
 						</div>
@@ -187,15 +212,13 @@
 			<div class="row">
 				<div class="col">
 
-					<div class="modal fade" id="enough">
+					<div class="modal fade" id="myTeam">
 						<div class="modal-dialog">
 							<div class="modal-header">
-								<h3>You've picked your six</h3>
+								<h3>You've picked Six</h3>
 							</div>
 							<div class="modal-body">
-								You've got six players in your list! If you want to add anyone else, you'll have to
-								remove someone by unchecking the box next to
-								their name to pick any more.
+								
 							</div>
 							<div class="modal-footer">
 								<input type="button" class="openModalbtn" data-dismiss="#enough" value="Close">
@@ -208,6 +231,5 @@
 				</div>
 
 			</div>
-
 
 </html>
