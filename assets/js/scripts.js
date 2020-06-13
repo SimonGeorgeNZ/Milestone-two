@@ -5,6 +5,7 @@ let player_ID;
 let playerDetails;
 let playerArray = [];
 let fullPlayerList = [];
+let idArray = [];
 
 
 
@@ -32,7 +33,7 @@ function createPlayerElements() {
         let num = 0;
 
         data.forEach(function (d) {
-            
+
             console.log(d)
             document.getElementById('player_data')
             const div = document.createElement('div')
@@ -63,8 +64,8 @@ function createPlayerElements() {
             } else {
                 outter.classList.add('back');
             };
-            
-            
+
+
 
 
 
@@ -85,10 +86,11 @@ function createPlayerElements() {
                     select.style.display = 'none'
                     num++;
                     playerArray.push(d.name)
+                    idArray.push(d.id);
                     var fullIndex = fullPlayerList.indexOf(d.name);
                     if (fullIndex > -1) {
-                            fullPlayerList.splice(fullIndex, 1);
-                        }
+                        fullPlayerList.splice(fullIndex, 1);
+                    }
                     var arrayOfElements = document.getElementsByClassName('player-select')
                     if (num === 6) {
                         $("#enough").modal('show');
@@ -105,6 +107,10 @@ function createPlayerElements() {
                         document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
                         select.style.display = 'inline'
                         num--;
+                        var idIndex = idArray.indexOf(d.id);
+                        if (idIndex > -1) {
+                            idArray.splice(idIndex, 1);
+                        }
                         var index = playerArray.indexOf(d.name);
                         if (index > -1) {
                             playerArray.splice(index, 1);
