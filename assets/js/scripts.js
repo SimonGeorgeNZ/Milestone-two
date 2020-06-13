@@ -3,6 +3,7 @@ let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/r
 let api_key = "/profile.json?api_key=ffeptjub472nfnf8ywnnyrf4";
 let player_ID;
 let playerDetails;
+let playerArray = [];
 
 
 
@@ -39,6 +40,7 @@ function createPlayerElements() {
             var player_ID = d.id
             select.className = 'player-select';
             select.innerHTML = "Select";
+            select.id = d.name;
             outter.className = 'player-data';
             view.className = 'viewProfile';
             view.id = player_ID;
@@ -78,14 +80,16 @@ function createPlayerElements() {
                     document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
                     select.style.display = 'none'
                     num++;
-                    var arrayOfElements = document.getElementsByClassName('player-select')
+                    playerArray.push(d.name)
+                    var arrayOfElements = document.getElementById(d.name)
                     if (num === 6) {
                         $("#enough").modal('show');
                         for (var i = 0; i < arrayOfElements.length; i++) {
                             arrayOfElements[i].style.display = 'none';
                         }
-
                     }
+
+
 
 
 
@@ -93,7 +97,19 @@ function createPlayerElements() {
                         document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
                         select.style.display = 'inline'
                         num--;
-                        
+                        var index = playerArray.indexOf(d.name);
+                        if (index > -1) {
+                            playerArray.splice(index, 1);
+                        }
+                        if (num === 5) {
+                            for (var i = 0; i < arrayOfElements.length; i++) {
+                                arrayOfElements[i].style.display = 'inline';
+                            }
+                        }
+                        for (var i = 0; i < playerArray; i++) {
+                            playerArray[i].select.style.display = 'none'
+                        }
+
                     }
 
                 }
@@ -102,6 +118,15 @@ function createPlayerElements() {
     });
 }
 
+function forwards() {
+    var allPlayers = document.getElementsByClassName('player-data');
+    for (i = 0; i < allPlayers.length; i++)
+        allPlayers[i].style.display = '';
+    var forwards = document.getElementsByClassName('back');
+    for (i = 0; i < forwards.length; i++) {
+        forwards[i].style.display = 'none';
+    }
+}
 
 
 function getPlayerData() {
