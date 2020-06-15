@@ -37,7 +37,7 @@
 					<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
 				</div>
 				<div class="col border1 menuitem brrb">
-					<a href="" class="abtext" data-toggle="modal" data-target="#myTeam"><span>Your Team</span></a>
+					<a href="#" id="displayTeam" class="abtext" onclick="combineInfo()"><span>Your Team</span></a>
 				</div>
 			</div>
 		</div>
@@ -45,6 +45,23 @@
 </header>
 
 <body class="black">
+	<div id="myTeam" class="body-main border1 borderradius myTeam">
+		<h3 class="abtext">You've picked Six</h3>
+		<div class="row">
+			<div class="col border1 borderradius myTeamNames myTeamCol">
+				<h4 class="abtext">Names</h4>
+				<ol id="combinedNames"> </ol>
+
+			</div>
+			<div class="col border1 borderradius myTeamStats myTeamCol">
+				<h4 class="abtext">Combined Stats</h4>
+				<p id="combinedWeight" class="abtextplain"> </p>
+
+			</div>
+
+		</div>
+
+	</div>
 	<div class="row container-fluid no-gutters body-main">
 		<div class="col-sm-3">
 			<div class="row selected">
@@ -208,28 +225,5 @@
 			</div>
 
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-
-					<div class="modal fade" id="myTeam">
-						<div class="modal-dialog">
-							<div class="modal-header">
-								<h3>You've picked Six</h3>
-							</div>
-							<div class="modal-body">
-								
-							</div>
-							<div class="modal-footer">
-								<input type="button" class="openModalbtn" data-dismiss="#enough" value="Close">
-						</div>
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-			</div>
 
 </html>

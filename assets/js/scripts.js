@@ -2,10 +2,11 @@ const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/r
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
 let api_key = "/profile.json?api_key=ffeptjub472nfnf8ywnnyrf4";
 let player_ID;
-let playerDetails;
+
 let playerArray = [];
 let fullPlayerList = [];
-let idArray = [];
+let newID;
+let weight = [];
 
 
 
@@ -40,10 +41,12 @@ function createPlayerElements() {
             const outter = document.createElement('div')
             const select = document.createElement('button')
             const view = document.createElement('button')
-            var player_ID = d.id
+            player_ID = d.id
+
             fullPlayerList.push(d.name);
             select.className = 'player-select';
             select.innerHTML = "Select";
+
             select.id = d.name;
             outter.className = 'player-data';
             view.className = 'viewProfile';
@@ -75,10 +78,12 @@ function createPlayerElements() {
 
                     const selPlayer = document.createElement("li")
                     const delPlayer = document.createElement('input')
-                    const selPlayDiv = document.createElement('div')
                     selPlayer.className = 'selectedPlayer';
                     delPlayer.className = 'deletePlayer';
-                    selPlayDiv.className = 'selPlayDiv';
+                    inTheList = document.createElement("li")
+                    inTheList.className = 'abtextplain'
+                    inTheList.innerHTML = d.name;
+                    document.getElementById("combinedNames").appendChild(inTheList)
                     selPlayer.innerHTML = d.name;
                     delPlayer.setAttribute('type', 'checkbox');
                     delPlayer.setAttribute('checked', 'checked');
@@ -86,7 +91,8 @@ function createPlayerElements() {
                     select.style.display = 'none'
                     num++;
                     playerArray.push(d.name)
-                    idArray.push(d.id);
+
+                    newID = d.id;
                     var fullIndex = fullPlayerList.indexOf(d.name);
                     if (fullIndex > -1) {
                         fullPlayerList.splice(fullIndex, 1);
@@ -96,21 +102,36 @@ function createPlayerElements() {
                         $("#enough").modal('show');
                         for (var i = 0; i < arrayOfElements.length; i++) {
                             arrayOfElements[i].style.display = 'none';
+
                         }
                     }
 
 
+                    var combinedURL = playerURL + newID + api_key
+                    var xhr = new XMLHttpRequest();
+                    console.log(combinedURL)
+                    xhr.open("GET", combinedURL);
+                    xhr.send();
 
+                    xhr.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            a = (JSON.parse(this.responseText));
+
+
+                            weight.push(a.player.weight)
+
+
+
+
+
+                        }
+                    };
 
 
                     delPlayer.onclick = function () {
                         document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
                         select.style.display = 'inline'
                         num--;
-                        var idIndex = idArray.indexOf(d.id);
-                        if (idIndex > -1) {
-                            idArray.splice(idIndex, 1);
-                        }
                         var index = playerArray.indexOf(d.name);
                         if (index > -1) {
                             playerArray.splice(index, 1);
@@ -121,8 +142,13 @@ function createPlayerElements() {
                                 document.getElementById(fullPlayerList[i]).style.display = 'inline'
                             }
                         }
-
+                        var weightIndex = weight.indexOf(a.player.weight);
+                        if (weightIndex > -1) {
+                            weight.splice(weightIndex, 1);
+                        }
+                        document.getElementById("combinedNames").removeChild(inTheList);
                     }
+
 
                 }
             }
@@ -130,22 +156,12 @@ function createPlayerElements() {
     });
 }
 
-function forwards() {
-    var allPlayers = document.getElementsByClassName('player-data');
-    for (i = 0; i < allPlayers.length; i++)
-        allPlayers[i].style.display = '';
-    var forwards = document.getElementsByClassName('back');
-    for (i = 0; i < forwards.length; i++) {
-        forwards[i].style.display = 'none';
-    }
-}
+
 
 
 function getPlayerData() {
 
     const fullPlayerURL = playerURL + this.id + api_key;
-    console.log(fullPlayerURL);
-    console.log(this.id);
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", fullPlayerURL);
@@ -154,8 +170,12 @@ function getPlayerData() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             p = JSON.parse(this.responseText);
-            console.dir(p.roles[0])
+
             document.querySelector('#playerProfileName').textContent = p.player.name;
+
+
+
+
             //Rugby World Cup 2019
             for (i = 0; i < p.statistics.seasons.length; i++) {
                 if (p.statistics.seasons[i].id === "sr:season:59616") {
@@ -167,6 +187,7 @@ function getPlayerData() {
                     document.querySelector('#RWC2019penalty').textContent = "- Penalty goals:" + " " + p.statistics.seasons[i].statistics.penalty_goals_successful
                     document.querySelector('#RWC2019conversions').textContent = "- Conversions:" + " " + p.statistics.seasons[i].statistics.conversions_successful
                 }
+
 
             }
             //Super Rugby 2019
@@ -208,6 +229,7 @@ function getPlayerData() {
                 }
             }
 
+
         }
 
     };
@@ -226,6 +248,7 @@ $(document).ready = function () {
         sessionStorage.setItem('openModal', true);
     }
 };
+
 
 
 function forwards() {
@@ -256,6 +279,14 @@ function allPlayers() {
     document.getElementById('openModal').style.display = 'hidden';
 }
 
+function combineInfo() {
+    var x = document.getElementById("myTeam");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    combinedWeight = weight.reduce(function (a, b) { return a + b; }, 0);
+    document.getElementById("combinedWeight").innerHTML = "Weight:" + " " + combinedWeight + "kg";
 
-
-
+}
