@@ -321,9 +321,14 @@ html body {
     height: auto;
 }
 
+.myTeam h2 {
+    font-size: 5vw;
+}
+
 .myTeamCol {
     height: auto;
     margin-bottom: 1vw;
+    margin-right: 2vw!important;
 }
 
 .myTeamNames {
@@ -336,10 +341,25 @@ html body {
 
 
 
-.myTeamStats{
-    margin-right: 2vw!important;
+.myTeamStats { 
     margin-left: .5vw;
     float: right;
+    margin-bottom: 1vw!important;
+}
+
+.myTeamStats p {
+    margin-bottom: .3vw;
+    padding-left: 1vw;
+}
+
+.myTeamStats {
+    column-count: 2;
+    column-gap: 1vw;
+}
+
+
+.myTeamStats h4 {
+    text-align: left;
 }
 
 /*--------------------------------------------Media Queries*/
