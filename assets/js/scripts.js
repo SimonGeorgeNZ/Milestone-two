@@ -104,9 +104,18 @@ function createPlayerElements() {
                         $("#enough").modal('show');
                         for (var i = 0; i < arrayOfElements.length; i++) {
                             arrayOfElements[i].style.display = 'none';
-
                         }
                     }
+                    if (num === 6) {
+                        document.getElementById("myTeamButton").style.display = 'inline';
+                        document.getElementById("allPlayersButton").style.display = 'none';
+                        document.getElementById("forwardsButton").style.display = 'none';
+                        document.getElementById("backsButton").style.display = 'none';
+                    }
+
+
+
+
 
 
                     var combinedURL = playerURL + newID + api_key
@@ -183,6 +192,10 @@ function createPlayerElements() {
                             document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
                             select.style.display = 'inline'
                             num--;
+                            document.getElementById("myTeamButton").style.display = 'none';
+                            document.getElementById("allPlayersButton").style.display = 'inline';
+                            document.getElementById("forwardsButton").style.display = 'inline';
+                            document.getElementById("backsButton").style.display = 'inline';
                             var index = playerArray.indexOf(d.name);
                             if (index > -1) {
                                 playerArray.splice(index, 1);
@@ -447,24 +460,33 @@ function allPlayers() {
     var allPlayers = document.getElementsByClassName('player-data');
     for (i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
-    document.getElementById('openModal').style.display = 'hidden';
 }
 
 function combineInfo() {
- //   if (num === 6) { 
-        var myTeamShow = document.getElementById("myTeam");
-        if (myTeamShow.style.display === "none") {
-            myTeamShow.style.display = "block";
-        } else {
-            myTeamShow.style.display = "none";
-        }
-        var mainPageHide = document.getElementById("mainPage");
-        if (myTeamShow.style.display === "block") {
-            mainPageHide.style.display = 'none';
-        } else {
-            mainPageHide.style.display = "";
-        }
- //   }
+    //   if (num === 6) { 
+    var myTeamShow = document.getElementById("myTeam");
+    if (myTeamShow.style.display === "none") {
+        myTeamShow.style.display = "block";
+        document.getElementById("backButton").style.display = "inline";
+        document.getElementById("myTeamButton").style.display = "none";
+    } else {
+        myTeamShow.style.display = "none";
+        document.getElementById("backButton").style.display = "none";
+        document.getElementById("myTeamButton").style.display = "inline";
+    }
+    var mainPageHide = document.getElementById("mainPage");
+    if (myTeamShow.style.display === "block") {
+        mainPageHide.style.display = 'none';
+    } else {
+        mainPageHide.style.display = "";
+    } if (mainPageHide.style.display === 'none') {
+        document.getElementById("footer").style.width = '100%';
+    } else {
+        document.getElementById("footer").style.width = '75%';
+    }
+    
+
+    //   }
     combinedWeight = weight.reduce(function (a, b) { return a + b; }, 0);
     document.getElementById("combinedWeight").innerHTML = "Weight:" + " " + combinedWeight + "kg";
     // Super 20 stats
@@ -523,5 +545,7 @@ function combineInfo() {
     document.getElementById("RC19combinedPenalty").innerHTML = "Penalty Goals:" + " " + combinedRCPenalties;
     combinedRCConversions = RCConversions.reduce(function (a, b) { return a + b; }, 0);
     document.getElementById("RC19combinedConversions").innerHTML = "Conversions:" + " " + combinedRCConversions;
+
+
 }
 

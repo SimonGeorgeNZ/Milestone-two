@@ -89,6 +89,15 @@ html body {
 .menuitem {
     padding: 0!important;
     font-size: 2.2vw;
+    display: inline;
+}
+
+#myTeamButton {
+    display: none;
+}
+
+#backButton {
+    display: none;
 }
 
 .menu-nav {
@@ -232,6 +241,7 @@ html body {
 
 .your-team {
     padding-left: .5vw!important;
+    padding-right: .5vw!important;
 }
 
 .selectedPlayer {
@@ -273,7 +283,7 @@ html body {
     display: inline-block;
 }
 
-.footer {
+#footer {
     padding-left: .8vw;
     padding-right: .8vw;
     float: right;
@@ -282,6 +292,7 @@ html body {
     margin-top: .8vw;
 }
 
+
 .thanks {
     font-size: .8vw;
     color: white;
@@ -289,6 +300,7 @@ html body {
     font-weight: 600;
     justify-content: center;
     height: 3.2vw;
+    margin-top: 1vw;
 }
 
 
@@ -361,6 +373,10 @@ html body {
     font-size: 2.3vw;
 }
 
+#combinedNames {
+    padding-left: 3vw;
+}
+
 
 
 /*--------------------------------------------Media Queries*/
@@ -420,6 +436,7 @@ html body {
     #combinedNames {
         column-count: 3;
         column-gap: 5vw;
+        text-align: left;
     }
 }
 
