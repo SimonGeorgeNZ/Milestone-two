@@ -114,10 +114,6 @@ html body {
 /*--------------------------------------------Body*/
 
 
-.your-team h3 {
-    padding-top: 1.3vw;
-}
-
 
 .players {
     text-align: center;
@@ -215,7 +211,6 @@ html body {
 
 .deletePlayer {
     display: inline-block;
-    margin-left: 1.5vw;
     cursor: pointer;
     height: 1.3vw;
     float: right;
@@ -226,8 +221,17 @@ html body {
     font-size: 1.5vw;
     font-weight: 100!important;
     color: white;
-    padding-left: 1.3vw;
+    padding-left: 1vw;
+    width: 100%;
     
+}
+
+.your-team h3 {
+    padding-top: 1.3vw;
+}
+
+.your-team {
+    padding-left: .5vw!important;
 }
 
 .selectedPlayer {
@@ -287,13 +291,6 @@ html body {
     height: 3.2vw;
 }
 
-.myTeamfooter {
-    padding-left: .8vw;
-    padding-right: .8vw;
-    margin-right: 0!important;
-    margin-left: 0!important;
-    margin-top: .8vw;
-}
 
 
 /*--------------------------------------------Player Profile*/
@@ -314,38 +311,37 @@ html body {
 
 /*--------------------------------------------My Team Hidden*/
 
-.myTeam {
-    margin-left: 1vw!important;
-    margin-right: 1vw!important;
+#myTeam {
     display: none;
-    height: auto;
 }
 
-.myTeam h2 {
+#myTeam h2 {
     font-size: 5vw;
+    padding-top: 1.3vw;
 }
 
 .myTeamCol {
-    height: auto;
     margin-bottom: 1vw;
-    margin-right: 2vw!important;
+
 }
 
 .myTeamNames {
-    margin-left: 2vw!important;
-    margin-right: .5vw;
-    float: left;
-    max-width: 30vw!important;
-    
+    margin-bottom: 1vw;
+    font-size: 2vw;
 }
 
-
-
-.myTeamStats { 
-    margin-left: .5vw;
-    float: right;
-    margin-bottom: 1vw!important;
+.myTeamNames h3 {
+    padding-top: 2vw;
 }
+
+.myTeamCol h3 {
+    padding-top: 2vw;
+}
+
+.myTeamNames li {
+    padding-bottom: 1.5vw;
+}
+
 
 .myTeamStats p {
     margin-bottom: .3vw;
@@ -355,12 +351,17 @@ html body {
 .myTeamStats {
     column-count: 2;
     column-gap: 1vw;
+    padding-top: 1vw;
+    font-size: 1.6vw;
 }
 
 
 .myTeamStats h4 {
     text-align: left;
+    font-size: 2.3vw;
 }
+
+
 
 /*--------------------------------------------Media Queries*/
 
@@ -376,12 +377,8 @@ html body {
         display: inline;
     }
 
-    .your-team {
-        width: 30%;
-    }
-
     .playerProfile {
-        width: 70%;
+        width: 75%;
     }
 
     .players {
@@ -418,6 +415,11 @@ html body {
     }
     .playerProfileInner h4:first-child  {
         padding-top: 0!important;
+    }
+
+    #combinedNames {
+        column-count: 3;
+        column-gap: 5vw;
     }
 }
 

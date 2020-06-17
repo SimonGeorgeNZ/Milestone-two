@@ -45,17 +45,17 @@
 </header>
 
 <body class="black">
-	<div id="myTeam" class="body-main border1 borderradius myTeam">
+	<div id="myTeam" class="body-main container-fluid no-gutters">
 		<h2 class="abtext">You've picked Six</h2>
-		<div class="row">
-			<div class="col-3 border1 borderradius myTeamNames myTeamCol">
+		<div class="row selected">
+			<div class="col-sm-3 border1 borderradius myTeamNames">
 				<h3 class="abtext">Names</h3>
 				<ol id="combinedNames"> </ol>
 
 			</div>
-			<div class="col-8 border1 borderradius myTeamCol abtextplain">
+			<div class="col border1 borderradius myTeamCol abtextplain">
 				<h3 class="abtext">Combined Stats</h3>
-				<div class="myTeamStats">
+				<ol class="myTeamStats">
 					<p id="combinedWeight"> </p>
 					<h4 id="supercombined2020" class="abtext"></h4>
 					<p id="super20combinedGames"></p>
@@ -85,26 +85,26 @@
 					<p id="RC19combinedRed"></p>
 					<p id="RC19combinedPenalty"></p>
 					<p id="RC19combinedConversions"></p>
-				</div>
+				</ol>
 			</div>
 
 		</div>
 
 	</div>
-	<div class="row container-fluid no-gutters body-main">
+	<div id="mainPage" class="row container-fluid no-gutters body-main">
 		<div class="col-sm-3">
 			<div class="row selected">
 				<div class="col border1 your-team borderradius">
 					<h3 class="abtext">Your team</h3>
-					<div class="row">
-						<ol id="mySix" class="abtextplain">
 
-						</ol>
-					</div>
+					<ol id="mySix" class="abtextplain">
+
+					</ol>
+
 				</div>
 				<div class="border1 abtext playerProfile borderradius">
 					<h3 id="playerProfileName">Player Profile</h3>
-					<div id="player_Profile" class="row">
+					
 						<ul class="col playerProfileInner abtextplain">
 							<h4 id="super2019" class="abtext"></h4>
 							<p id="superTeam"></p>
@@ -137,7 +137,7 @@
 							<p id="super20Penatly"></p>
 							<p id="super20Conversions"></p>
 						</ul>
-					</div>
+					
 				</div>
 			</div>
 		</div>

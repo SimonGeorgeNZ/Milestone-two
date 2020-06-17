@@ -1,12 +1,13 @@
-const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+const baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=tmh7ew837dqxrne4rg4rcsgh";
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
-let api_key = "/profile.json?api_key=7h8xjjyjyg7dytdr6pdp76kn";
+let api_key = "/profile.json?api_key=tmh7ew837dqxrne4rg4rcsgh";
 let player_ID;
 let combinedData;
 let playerArray = [];
 let fullPlayerList = [];
 let newID;
 let weight = [];
+let num;
 
 let super20Games = []; let super20Tries = []; let super20Yellow = []; let super20Red = []; let super20Pentalies = []; let super20Conversions = [];
 let super19Games = []; let super19Tries = []; let super19Yellow = []; let super19Red = []; let super19Penalties = []; let super19Conversions = [];
@@ -32,7 +33,7 @@ function getData(cb) {
 function createPlayerElements() {
     getData(function (data) {
         data = data.players;
-        let num = 0;
+        num = 0;
 
         data.forEach(function (d) {
 
@@ -133,7 +134,7 @@ function createPlayerElements() {
                                 }
 
 
-                            } 
+                            }
                             //Super Rugby 2019
                             for (i = 0; i < a.statistics.seasons.length; i++) {
                                 if (a.statistics.seasons[i].id === "sr:season:59620") {
@@ -225,7 +226,7 @@ function createPlayerElements() {
 
                                 }
                             } // Super Rugby 2019
-                             for (i = 0; i < a.statistics.seasons.length; i++) {
+                            for (i = 0; i < a.statistics.seasons.length; i++) {
                                 if (a.statistics.seasons[i].id === "sr:season:59620") {
                                     var super19GamesIndex = super19Games.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                     if (super19GamesIndex > -1) {
@@ -247,15 +248,15 @@ function createPlayerElements() {
                                     if (super19ConversionIndex > -1) {
                                         super19Conversions.splice(super19ConversionIndex, 1);
                                     }
-                                    var super19PenaltiesIndex = super19Pentalies.indexOf(a.statistics.seasons[i].statistics.penalty_goals_successful);
+                                    var super19PenaltiesIndex = super19Penalties.indexOf(a.statistics.seasons[i].statistics.penalty_goals_successful);
                                     if (super19PenaltiesIndex > -1) {
-                                        super19Pentalies.splice(super19PenaltiesIndex, 1);
+                                        super19Penalties.splice(super19PenaltiesIndex, 1);
                                     }
 
                                 }
                             }
                             // Rugby World Cup 2019
-                             for (i = 0; i < a.statistics.seasons.length; i++) {
+                            for (i = 0; i < a.statistics.seasons.length; i++) {
                                 if (a.statistics.seasons[i].id === "sr:season:59620") {
                                     var RWCGamesIndex = RWCGames.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                     if (RWCGamesIndex > -1) {
@@ -285,7 +286,7 @@ function createPlayerElements() {
                                 }
                             }
                             // Rugby Championship 2019
-                             for (i = 0; i < a.statistics.seasons.length; i++) {
+                            for (i = 0; i < a.statistics.seasons.length; i++) {
                                 if (a.statistics.seasons[i].id === "sr:season:67631") {
                                     var RCGamesIndex = RCGames.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                     if (RCGamesIndex > -1) {
@@ -450,12 +451,20 @@ function allPlayers() {
 }
 
 function combineInfo() {
-    var x = document.getElementById("myTeam");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
+ //   if (num === 6) { 
+        var myTeamShow = document.getElementById("myTeam");
+        if (myTeamShow.style.display === "none") {
+            myTeamShow.style.display = "block";
+        } else {
+            myTeamShow.style.display = "none";
+        }
+        var mainPageHide = document.getElementById("mainPage");
+        if (myTeamShow.style.display === "block") {
+            mainPageHide.style.display = 'none';
+        } else {
+            mainPageHide.style.display = "";
+        }
+ //   }
     combinedWeight = weight.reduce(function (a, b) { return a + b; }, 0);
     document.getElementById("combinedWeight").innerHTML = "Weight:" + " " + combinedWeight + "kg";
     // Super 20 stats
