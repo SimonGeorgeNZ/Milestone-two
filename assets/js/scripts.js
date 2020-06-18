@@ -1,7 +1,7 @@
 let baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=tmh7ew837dqxrne4rg4rcsgh";
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
 let api_key = "/profile.json?api_key=tmh7ew837dqxrne4rg4rcsgh";
-let player_ID;
+let player_ID; 
 let combinedData;
 let playerArray = [];
 let fullPlayerList = [];
@@ -9,10 +9,12 @@ let newID;
 let weight = [];
 let num;
 
-let super20Games = []; let super20Tries = []; let super20Yellow = []; let super20Red = []; let super20Pentalies = []; let super20Conversions = [];
-let super19Games = []; let super19Tries = []; let super19Yellow = []; let super19Red = []; let super19Penalties = []; let super19Conversions = [];
-let RWCGames = []; let RWCTries = []; let RWCYellow = []; let RWCRed = []; let RWCPenalites = []; let RWCConversions = [];
-let RCGames = []; let RCTries = []; let RCYellow = []; let RCRed = []; let RCPenalties = []; let RCConversions = [];
+let super20Games = []; let super20Tries = []; let super20Yellow = []; let super20Red = []; let super20Pentalies = []; let super20Conversions = []; //Initialise Super Rugby 2020 Arrays for combined data
+let super19Games = []; let super19Tries = []; let super19Yellow = []; let super19Red = []; let super19Penalties = []; let super19Conversions = []; //Initialise Super Rugby 2019 Arrays for combined data
+let RWCGames = []; let RWCTries = []; let RWCYellow = []; let RWCRed = []; let RWCPenalites = []; let RWCConversions = []; //Initialise Rugby World Cup Arrays for combined data
+let RCGames = []; let RCTries = []; let RCYellow = []; let RCRed = []; let RCPenalties = []; let RCConversions = []; //Initialise Rugby Championship Arrays for combined data
+
+// First API data request for player information
 
 function getData(cb) {
     var xhr = new XMLHttpRequest();
@@ -28,12 +30,12 @@ function getData(cb) {
 }
 
 
-
+//For each set of player information set up an individual div with a small amount of info on landing page
 
 function createPlayerElements() {
     getData(function (data) {
         data = data.players;
-        num = 0;
+        num = 0; //Count will be used to ensure only 6 players can be added to list
 
         data.forEach(function (d) {
 
@@ -42,16 +44,16 @@ function createPlayerElements() {
             const outter = document.createElement('div');
             const select = document.createElement('button');
             const view = document.createElement('button');
-            player_ID = d.id;
+            player_ID = d.id; //Stores player ID to use for API request for individual player data
 
-            fullPlayerList.push(d.name);
+            fullPlayerList.push(d.name); //This array is used in partnership with "playerArray" to know what players to add select button back to if someone is deleted from list of 6
             select.className = 'player-select';
             select.innerHTML = "Select";
 
             select.id = d.name;
             outter.className = 'player-data';
             view.className = 'viewProfile';
-            view.id = player_ID;
+            view.id = player_ID; 
             view.innerHTML = 'View';
             div.className = 'items';
             view.onclick = (getPlayerData);
@@ -63,7 +65,7 @@ function createPlayerElements() {
             outter.appendChild(div);
             outter.appendChild(select);
             outter.appendChild(view);
-            if (d.type == ['PR'] || d.type == ['L'] || d.type == ['BR'] || d.type == ['HO']) {
+            if (d.type == ['PR'] || d.type == ['L'] || d.type == ['BR'] || d.type == ['HO']) { //Used to sort players into positions
                 outter.classList.add('forward');
             } else {
                 outter.classList.add('back');
@@ -73,9 +75,8 @@ function createPlayerElements() {
 
 
 
-            select.onclick = function () {
+            select.onclick = function () { //Enters player into team list
                 if (num < 6) {
-                    console.log(num);
 
                     const selPlayer = document.createElement("li");
                     const delPlayer = document.createElement('input');
@@ -90,23 +91,23 @@ function createPlayerElements() {
                     delPlayer.setAttribute('checked', 'checked');
                     document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
                     select.style.display = 'none';
-                    num++;
-                    playerArray.push(d.name);
+                    num++; 
+                    playerArray.push(d.name); //The second array that determins what profiles to add a select button back to
 
-                    newID = d.id;
+                    newID = d.id; //Forms part of the API request that adds player data together
                     var fullIndex = fullPlayerList.indexOf(d.name);
                     if (fullIndex > -1) {
                         fullPlayerList.splice(fullIndex, 1);
                     }
                     var arrayOfElements = document.getElementsByClassName('player-select');
-                    if (num === 6) {
+                    if (num === 6) { //Shows the user a modal that lets them know they have enough players in their team
                         $("#enough").modal('show');
-                        for (var i = 0; i < arrayOfElements.length; i++) {
+                        for (var i = 0; i < arrayOfElements.length; i++) { //Removes all select buttons to reinforce to the user they can't add anyone else
                             arrayOfElements[i].style.display = 'none';
                         }
                     }
-                    if (num === 6) {
-                        document.getElementById("myTeamButton").style.display = 'inline';
+                    if (num === 6) { //Changes the menu from position sort buttons to one link to view combined player data
+                        document.getElementById("myTeamButton").style.display = 'inline'; 
                         document.getElementById("allPlayersButton").style.display = 'none';
                         document.getElementById("forwardsButton").style.display = 'none';
                         document.getElementById("backsButton").style.display = 'none';
@@ -115,7 +116,7 @@ function createPlayerElements() {
 
 
 
-
+                    //API request for combined data, adding data to various arrays that will later be added together 
 
                     var combinedURL = playerURL + newID + api_key;
                     var xhr = new XMLHttpRequest();
@@ -179,13 +180,10 @@ function createPlayerElements() {
                                     RCPenalties.push(a.statistics.seasons[i].statistics.penalty_goals_successful);
                                     RCConversions.push(a.statistics.seasons[i].statistics.conversions_successful);
                                 }
-
-
                             }
-
-
                         }
-
+                        //If a user deletes a player from their list, information needs to be removed from arrays, a count taken off the total, menu will go
+                        // back to normal if the deletion takes the user back inder 6 players. 
 
                         delPlayer.onclick = function () {
                             document.getElementById("mySix").removeChild(selPlayer).removeChild(delPlayer);
@@ -329,18 +327,15 @@ function createPlayerElements() {
                             }
                             document.getElementById("combinedNames").removeChild(inTheList);
                         };
-
-
                     };
                 }
             };
         });
-
     });
 }
 
 
-
+// API request that forms the individual player profiles when a user clicks on the "view" button.
 
 function getPlayerData() {
 
@@ -411,16 +406,12 @@ function getPlayerData() {
 
                 }
             }
-
-
         }
-
     };
-
 }
 
 
-
+// Makes sure the welcome modal won't be shown every time the user refreshes the page
 
 
 $(document).ready = function () {
@@ -432,7 +423,7 @@ $(document).ready = function () {
     }
 };
 
-
+//Sorts players into positions if the user clicks the button in the menu
 
 function forwards() {
     var allPlayers = document.getElementsByClassName('player-data');
@@ -461,8 +452,9 @@ function allPlayers() {
         allPlayers[i].style.display = '';
 }
 
+//Hides all players from the screen and shows the user the combined info
+
 function combineInfo() {
-    //   if (num === 6) { 
     var myTeamShow = document.getElementById("myTeam");
     if (myTeamShow.style.display === "none") {
         myTeamShow.style.display = "block";
@@ -484,8 +476,9 @@ function combineInfo() {
         document.getElementById("footer").style.width = '75%';
     }
     
+    //Adds all info in the combined stats arrays and displays it in the combined info display
 
-    //   }
+
     combinedWeight = weight.reduce(function (a, b) { return a + b; }, 0);
     document.getElementById("combinedWeight").innerHTML = "Weight:" + " " + combinedWeight + "kg";
     // Super 20 stats
