@@ -92,8 +92,16 @@ html body {
     display: inline;
 }
 
+.hiddenButton {
+    font-size: 2.6vw;
+    display: inline;
+    padding-bottom: 1vw;
+    text-align: center;
+}
+
 #myTeamButton {
     display: none;
+
 }
 
 #backButton {
@@ -227,7 +235,7 @@ html body {
 
 #mySix {
     display: inline-block;
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 100!important;
     color: white;
     padding-left: 1vw;
@@ -316,7 +324,7 @@ html body {
 }
 
 .playerProfile h3 {
-    font-size: 2.8vw;
+    font-size: 3.3vw;
     padding-top: 1.3vw;
 }
 
