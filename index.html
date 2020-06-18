@@ -15,193 +15,171 @@
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 	</script>
 	<title>Chose your team!</title>
-
 </head>
-<header class="container-fluid">
-	<div class="row title-main">
-		<div class="col border1 logo-img brl">
-
-		</div>
-		<div class="col-9">
-			<div class="row title border1 abtext brrt">
-				<h1>Pick Six!</h1>
-			</div>
-			<div class="row menu-nav">
-				<div id="allPlayersButton" class="col border1 menuitem border-off">
-					<a href="#" id="allPlayers" class="abtext" onclick="allPlayers()"><span>All Players</span></a>
-				</div>
-				<div id="forwardsButton" class="col border1 menuitem border-off">
-					<a href="#" id="forwards" class="abtext" onclick="forwards()"><span>Forwards</span></a>
-				</div>
-				<div id="backsButton" class="col border1 menuitem brrb">
-					<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
-				</div>
-				<div id="myTeamButton" class="col border1 brrb hiddenButton">
-					<a href="#" id="displayTeam" class="abtext"
-						onclick="combineInfo()"><span>Click here to see how your Six measure up</span></a>
-				</div>
-				<div id="backButton" class="col border1 brrb hiddenButton">
-					<a href="#" id="displayAllData" class="abtext"
-						onclick="combineInfo()"><span>Click here to go back to all player data</span></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
 
 <body class="black">
-	<div id="myTeam" class="body-main container-fluid no-gutters">
+	<header class="container-fluid">
+		<div class="row title-main">
+			<div class="col border1 logo-img brl">
+			</div>
+			<div class="col-9">
+				<div class="row title border1 abtext brrt">
+					<h1>Pick Six!</h1>
+				</div>
+				<div class="row menu-nav">
+					<div id="allPlayersButton" class="col border1 menuitem border-off">
+						<a href="#" id="allPlayers" class="abtext" onclick="allPlayers()"><span>All Players</span></a>
+					</div>
+					<div id="forwardsButton" class="col border1 menuitem border-off">
+						<a href="#" id="forwards" class="abtext" onclick="forwards()"><span>Forwards</span></a>
+					</div>
+					<div id="backsButton" class="col border1 menuitem brrb">
+						<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
+					</div>
+					<div id="myTeamButton" class="col border1 brrb hiddenButton">
+						<a href="#" id="displayTeam" class="abtext"
+							onclick="combineInfo()"><span>Click here to see how your Six measure up</span></a>
+					</div>
+					<div id="backButton" class="col border1 brrb hiddenButton">
+						<a href="#" id="displayAllData" class="abtext"
+							onclick="combineInfo()"><span>Click here to go back to all player data</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="myTeam" class="body-main container-fluid no-gutters black">
 		<h2 class="abtext">You've picked Six</h2>
 		<div class="row selected">
 			<div class="col-sm-3 border1 borderradius myTeamNames">
 				<h3 class="abtext">Names</h3>
 				<ol id="combinedNames"> </ol>
-
 			</div>
 			<div class="col border1 borderradius myTeamCol abtextplain">
 				<h3 class="abtext">Combined Stats</h3>
 				<ol class="myTeamStats">
-					<p id="combinedWeight"> </p>
-					<h4 id="supercombined2020" class="abtext"></h4>
-					<p id="super20combinedGames"></p>
-					<p id="super20combinedTries"></p>
-					<p id="super20combinedYellow"></p>
-					<p id="super20combinedRed"></p>
-					<p id="super20combinedPenalty"></p>
-					<p id="super20combinedConversions"></p>
-					<h4 id="supercombined2019" class="abtext"></h4>
-					<p id="super19combinedGames"></p>
-					<p id="super19combinedTries"></p>
-					<p id="super19combinedYellow"></p>
-					<p id="super19combinedRed"></p>
-					<p id="super19combinedPenalty"></p>
-					<p id="super19combinedConversions"></p>
-					<h4 id="RWCcombined2019" class="abtext"></h4>
-					<p id="RWC19combinedGames"></p>
-					<p id="RWC19combinedTries"></p>
-					<p id="RWC19combinedYellow"></p>
-					<p id="RWC19combinedRed"></p>
-					<p id="RWC19combinedPenalty"></p>
-					<p id="RWC19combinedConversions"></p>
-					<h4 id="RCcombined2019" class="abtext"></h4>
-					<p id="RC19combinedGames"></p>
-					<p id="RC19combinedTries"></p>
-					<p id="RC19combinedYellow"></p>
-					<p id="RC19combinedRed"></p>
-					<p id="RC19combinedPenalty"></p>
-					<p id="RC19combinedConversions"></p>
+					<li id="combinedWeight"> </li>
+					<li id="supercombined2020" class="abtext teamStatsHead"></li>
+					<li id="super20combinedGames"></li>
+					<li id="super20combinedTries"></li>
+					<li id="super20combinedYellow"></li>
+					<li id="super20combinedRed"></li>
+					<li id="super20combinedPenalty"></li>
+					<li id="super20combinedConversions"></li>
+					<li id="supercombined2019" class="abtext teamStatsHead"></li>
+					<li id="super19combinedGames"></li>
+					<li id="super19combinedTries"></li>
+					<li id="super19combinedYellow"></li>
+					<li id="super19combinedRed"></li>
+					<li id="super19combinedPenalty"></li>
+					<li id="super19combinedConversions"></li>
+					<li id="RWCcombined2019" class="abtext teamStatsHead"></li>
+					<li id="RWC19combinedGames"></li>
+					<li id="RWC19combinedTries"></li>
+					<li id="RWC19combinedYellow"></li>
+					<li id="RWC19combinedRed"></li>
+					<li id="RWC19combinedPenalty"></li>
+					<li id="RWC19combinedConversions"></li>
+					<li id="RCcombined2019" class="abtext teamStatsHead"></li>
+					<li id="RC19combinedGames"></li>
+					<li id="RC19combinedTries"></li>
+					<li id="RC19combinedYellow"></li>
+					<li id="RC19combinedRed"></li>
+					<li id="RC19combinedPenalty"></li>
+					<li id="RC19combinedConversions"></li>
 				</ol>
 			</div>
-
 		</div>
-
 	</div>
 	<div id="mainPage" class="row container-fluid no-gutters body-main">
 		<div class="col-sm-3">
 			<div class="row selected">
 				<div class="col border1 your-team borderradius">
 					<h3 class="abtext">Your team</h3>
-
 					<ol id="mySix" class="abtextplain">
-
 					</ol>
-
 				</div>
 				<div class="border1 abtext playerProfile borderradius">
 					<h3 id="playerProfileName">Player Profile</h3>
-
 					<ul class="col playerProfileInner abtextplain">
-						<h4 id="super2019" class="abtext"></h4>
-						<p id="superTeam"></p>
-						<p id="superGames"></p>
-						<p id="superTries"></p>
-						<p id="SuperYellow"></p>
-						<p id="superRed"></p>
-						<p id="superPenatly"></p>
-						<p id="superConversions"></p>
-						<h4 id="RWC2019" class="abtext"></h4>
-						<p id="RWC2019games"></p>
-						<p id="RWC2019tries"></p>
-						<p id="RWC2019yellow"></p>
-						<p id="RWC2019red"></p>
-						<p id="RWC2019penalty"></p>
-						<p id="RWC2019conversions"></p>
-						<h4 id="RC2019" class="abtext"></h4>
-						<p id="RC2019Games"></p>
-						<p id="RC2019Tries"></p>
-						<p id="RC2019Yellow"></p>
-						<p id="RC2019Red"></p>
-						<p id="RC2019conversions"></p>
-						<p id="RC2019Penalty"></p>
-						<h4 id="super2020" class="abtext"></h4>
-						<p id="super20Team"></p>
-						<p id="super20Games"></p>
-						<p id="super20Tries"></p>
-						<p id="Super20Yellow"></p>
-						<p id="super20Red"></p>
-						<p id="super20Penatly"></p>
-						<p id="super20Conversions"></p>
+						<li id="super2019" class="abtext teamStatsHead"></li>
+						<li id="superTeam"></li>
+						<li id="superGames"></li>
+						<li id="superTries"></li>
+						<li id="SuperYellow"></li>
+						<li id="superRed"></li>
+						<li id="superPenatly"></li>
+						<li id="superConversions"></li>
+						<li id="RWC2019" class="abtext teamStatsHead"></li>
+						<li id="RWC2019games"></li>
+						<li id="RWC2019tries"></li>
+						<li id="RWC2019yellow"></li>
+						<li id="RWC2019red"></li>
+						<li id="RWC2019penalty"></li>
+						<li id="RWC2019conversions"></li>
+						<li id="RC2019" class="abtext teamStatsHead"></li>
+						<li id="RC2019Games"></li>
+						<li id="RC2019Tries"></li>
+						<li id="RC2019Yellow"></li>
+						<li id="RC2019Red"></li>
+						<li id="RC2019conversions"></li>
+						<li id="RC2019Penalty"></li>
+						<li id="super2020" class="abtext teamStatsHead"></li>
+						<li id="super20Team"></li>
+						<li id="super20Games"></li>
+						<li id="super20Tries"></li>
+						<li id="Super20Yellow"></li>
+						<li id="super20Red"></li>
+						<li id="super20Penatly"></li>
+						<li id="super20Conversions"></li>
 					</ul>
-
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-9">
 			<div class="col abtext border1 players borderradius">
 				<h3>Players</h3>
-
 				<div id="player_data" class="abtextplain"></div>
-
 			</div>
 		</div>
 	</div>
 	<footer class="container-fluid no-gutters ">
-
 		<div id="footer">
-				<div class="row borderradius border1 players">
-					<div class="col">
-						<a class="social-but" target="_blank" rel="noopener" href="https://www.facebook.com/AllBlacks/">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
-							<span class="sr-only">Facebook</span>
-						</a>
-					</div>
-					<div class="col">
-						<a class="social-but" target="_blank" rel="noopener" href="https://twitter.com/AllBlacks">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-							<span class="sr-only">Twitter</span>
-						</a>
-					</div>
-					<div class="col">
-						<a class="social-but" target="_blank" rel="noopener"
-							href="https://www.youtube.com/user/nzrugby">
-							<i class="fa fa-youtube" aria-hidden="true"></i>
-							<span class="sr-only">Youtube</span>
-						</a>
-					</div>
-					<div class="col">
-						<a class="social-but" target="_blank" rel="noopener"
-							href="https://www.instagram.com/allblacks/">
-							<i class="fa fa-instagram" aria-hidden="true"></i>
-							<span class="sr-only">Instagram</span>
-						</a>
-					</div>
-
+			<div class="row borderradius border1 players">
+				<div class="col">
+					<a class="social-but" target="_blank" rel="noopener" href="https://www.facebook.com/AllBlacks/">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+						<span class="sr-only">Facebook</span>
+					</a>
 				</div>
-				<div class="row borderradius border1 thanks abtextplain">
-					<p>Pick Six is proudly designed and built by Simon George for the purpose of his Milestone Two
-						project
-						within
-						the
-						Diploma in Full Stack Web Development, facilitated by Code Institute.</p>
+				<div class="col">
+					<a class="social-but" target="_blank" rel="noopener" href="https://twitter.com/AllBlacks">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+						<span class="sr-only">Twitter</span>
+					</a>
+				</div>
+				<div class="col">
+					<a class="social-but" target="_blank" rel="noopener" href="https://www.youtube.com/user/nzrugby">
+						<i class="fa fa-youtube" aria-hidden="true"></i>
+						<span class="sr-only">Youtube</span>
+					</a>
+				</div>
+				<div class="col">
+					<a class="social-but" target="_blank" rel="noopener" href="https://www.instagram.com/allblacks/">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+						<span class="sr-only">Instagram</span>
+					</a>
 				</div>
 			</div>
-
-
+			<div class="row borderradius border1 thanks abtextplain">
+				<p>Pick Six is proudly designed and built by Simon George for the purpose of his Milestone Two
+					project within the Diploma in Full Stack Web Development, facilitated by Code Institute.
+				</p>
+			</div>
+		</div>
 	</footer>
-
 </body>
-
-
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script>
@@ -211,38 +189,34 @@
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 <script>
 	onload = createPlayerElements()
-
+      
 </script>
 <div class="container">
 	<div class="row">
 		<div class="col">
-
 			<div class="modal fade" id="openModal">
 				<div class="modal-dialog">
 					<div class="modal-header">
 						<h3>Welcome to Pick 6!</h3>
 					</div>
 					<div class="modal-body">
-						Spend time browsing your favourite All Blacks players, using the select button to see
-						their
-						full profile of stats.
-						Combine 6 together to and visit the My Team page to see combined stats and fun facts.
+						Spend time browsing your favourite All Blacks players, view their latest stats by using the View
+						Profile button
+						and select them into your Six using the Select button. Once you have your Six, you'll be able to
+						see what your Six could
+						do together from the combined stats page.
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="openModalbtn" data-dismiss="#openModal" value="Close">
-						</div>
-
+                  </div>
 					</div>
 				</div>
-
 			</div>
 		</div>
-
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col">
-
 				<div class="modal fade" id="enough">
 					<div class="modal-dialog">
 						<div class="modal-header">
@@ -250,19 +224,17 @@
 						</div>
 						<div class="modal-body">
 							You've got six players in your list! If you want to add anyone else, you'll have to
-							remove someone by unchecking the box next to
-							their name to pick any more.
+							remove someone by unchecking the box next to their name. Otherwise, check out their combined
+							stats from the link
+							in the menu.
 						</div>
 						<div class="modal-footer">
 							<input type="button" class="openModalbtn" data-dismiss="#enough" value="Close">
-						</div>
-
+                  </div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-
 		</div>
 
 </html>
