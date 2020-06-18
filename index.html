@@ -5,7 +5,8 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<meta name="description" content="Pick Six is a site for rugby enthusiasts. Browse the profiles of 30 recent All Blacks, pick your six favourites then view their combined stats" />
+	<meta name="description"
+		content="Pick Six is a site for rugby enthusiasts. Browse the profiles of 30 recent All Blacks, pick your six favourites then view their combined stats" />
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
 		rel="stylesheet" />
@@ -18,37 +19,34 @@
 </head>
 
 <body class="black">
-	<header class="container-fluid">
-		<div class="row title-main">
-			<div class="col border1 logo-img brl">
+	<div class="row title-main container-fluid">
+		<div class="col border1 logo-img brl">
+		</div>
+		<div class="col-9">
+			<div class="row title border1 abtext brrt">
+				<h1>Pick Six!</h1>
 			</div>
-			<div class="col-9">
-				<div class="row title border1 abtext brrt">
-					<h1>Pick Six!</h1>
+			<div class="row menu-nav">
+				<div id="allPlayersButton" class="col border1 menuitem border-off">
+					<a href="#" id="allPlayers" class="abtext" onclick="allPlayers()"><span>All Players</span></a>
 				</div>
-				<div class="row menu-nav">
-					<div id="allPlayersButton" class="col border1 menuitem border-off">
-						<a href="#" id="allPlayers" class="abtext" onclick="allPlayers()"><span>All Players</span></a>
-					</div>
-					<div id="forwardsButton" class="col border1 menuitem border-off">
-						<a href="#" id="forwards" class="abtext" onclick="forwards()"><span>Forwards</span></a>
-					</div>
-					<div id="backsButton" class="col border1 menuitem brrb">
-						<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
-					</div>
-					<div id="myTeamButton" class="col border1 brrb hiddenButton">
-						<a href="#" id="displayTeam" class="abtext"
-							onclick="combineInfo()"><span>Click here to see how your Six measure up</span></a>
-					</div>
-					<div id="backButton" class="col border1 brrb hiddenButton">
-						<a href="#" id="displayAllData" class="abtext"
-							onclick="combineInfo()"><span>Click here to go back to all player data</span></a>
-					</div>
+				<div id="forwardsButton" class="col border1 menuitem border-off">
+					<a href="#" id="forwards" class="abtext" onclick="forwards()"><span>Forwards</span></a>
+				</div>
+				<div id="backsButton" class="col border1 menuitem brrb">
+					<a href="#" id="backs" class="abtext" onclick="backs()"><span>Backs</span></a>
+				</div>
+				<div id="myTeamButton" class="col border1 brrb hiddenButton">
+					<a href="#" id="displayTeam" class="abtext"
+						onclick="combineInfo()"><span>Click here to see how your Six measure up</span></a>
+				</div>
+				<div id="backButton" class="col border1 brrb hiddenButton">
+					<a href="#" id="displayAllData" class="abtext"
+						onclick="combineInfo()"><span>Click here to go back to all player data</span></a>
 				</div>
 			</div>
 		</div>
-	</header>
-
+	</div>
 	<div id="myTeam" class="body-main container-fluid no-gutters black">
 		<h2 class="abtext">You've picked Six</h2>
 		<div class="row selected">
