@@ -168,15 +168,10 @@ html body {
 
 }
 
-.player-select {
-    background-color: white;
-    color: black;
-}
 
 .player-select {
     background-color: white;
     color: black;
-    font-weight: 50;
     display: inline-block;
     position: relative;
     margin-right: 1.5vw;
@@ -232,7 +227,7 @@ html body {
 
 #mySix {
     display: inline-block;
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     font-weight: 100!important;
     color: white;
     padding-left: 1vw;
@@ -265,7 +260,7 @@ html body {
     text-align: left;
     margin-left: .7vw;
     margin-right: 1vw;
-    font-size: 1.3vw;
+    font-size: 2vw;
     padding-bottom: 1vw;
 }
 
@@ -275,7 +270,7 @@ html body {
 }
 
 .playerProfileInner h4 {
-    font-size: 2vw;
+    font-size: 2.5vw;
 }
 
 
@@ -291,21 +286,23 @@ html body {
 #footer {
     float: right;
     width: 75%;
-    margin-right: 0!important;
     margin-top: .8vw;
-    padding-left: 1.4vw!important;
-    padding-right: 1.4vw!important;
+    margin-right: 1vw!important;
+    padding-left: 2vw!important;
 }
 
 
 
 .thanks {
-    font-size: .8vw;
+    font-size: 1.5vw;
     color: white;
-    padding-top: .8vw;
+    padding-left: .8vw;
+    padding-right: .8vw;
+    padding-bottom: 1vw!important;
+    padding-top: 1vw!important;
     font-weight: 600;
-    justify-content: center;
-    height: 3.2vw;
+    text-align: center;
+    height: auto;
     margin-top: 1vw;
 }
 
@@ -399,11 +396,18 @@ html body {
         border-bottom-right-radius: 10px;
     }
 
-    .thanks {
-       font-size: 1vw; 
+    .thanks p {
+       font-size: 2vw;
+           padding-bottom: 1vw!important;
+    padding-top: 1vw!important; 
+        height: auto;
+                margin-bottom: 0!important;
+
     }
+
     .selectedPayer {
         display: inline;
+        word-break: break-all;
     }
 
     .playerProfile {
@@ -447,11 +451,40 @@ html body {
     }
 
     #combinedNames {
-        column-count: 3;
-        column-gap: 5vw;
+        column-count: 2;
+        column-gap: 3vw;
         text-align: left;
     }
+
+    .social-but {
+    font-size: 4vw;
+    color: white;
+    margin-left: 25%;
+    display: inline-block;
+    }
+
+    #playerProfileName {
+        font-size: 4vw;
+    }
+
+    .myTeamStats h4 {
+    font-size: 3vw;
 }
+
+.myTeamNames {
+    margin-bottom: 1vw;
+    font-size: 2.5vw;
+}
+
+.myTeamStats {
+    font-size: 2.5vw;
+}
+
+}
+
+
+
+
 
 
 
