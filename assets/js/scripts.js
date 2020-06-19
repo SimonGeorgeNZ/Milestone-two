@@ -322,7 +322,6 @@ function createPlayerElements() {
                                     if (RCPenaltiesIndex > -1) {
                                         RCPenalties.splice(RCPenaltiesIndex, 1);
                                     }
-
                                 }
                             }
                             document.getElementById("combinedNames").removeChild(inTheList);
@@ -427,7 +426,7 @@ $(document).ready(function () {
 
 function forwards() {
     var allPlayers = document.getElementsByClassName('player-data');
-    for (i = 0; i < allPlayers.length; i++)
+    for (let i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
     var forwards = document.getElementsByClassName('back');
     for (i = 0; i < forwards.length; i++) {

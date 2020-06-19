@@ -97,10 +97,15 @@ html body {
     text-align: center;
 }
 
+.hiddenButton span {
+    animation: fadeIn;
+    animation-duration: 1.5s;
+}
+
 #myTeamButton {
     display: none;
-
 }
+
 
 #backButton {
     display: none;
@@ -256,6 +261,8 @@ html body {
     list-style-type: decimal;
     list-style-position: inside;
     display: list-item;
+    animation: fadeIn;
+    animation-duration: 1.5s;
 }
 
 .selected {
