@@ -414,14 +414,14 @@ function getPlayerData() {
 // Makes sure the welcome modal won't be shown every time the user refreshes the page
 
 
-$(document).ready = function () {
+$(document).ready(function () {
     if (typeof Storage != "undefined") {
         if (!sessionStorage.getItem('openModal')) {
             $("#openModal").modal('show');
         }
         sessionStorage.setItem('openModal', true);
     }
-};
+});
 
 //Sorts players into positions if the user clicks the button in the menu
 
