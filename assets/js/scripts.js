@@ -369,7 +369,7 @@ function getPlayerData() {
 
             }
             //Super Rugby 2019
-            document.querySelector('#superTeam').textContent = "- Current super rugby team:" + " " + p.roles[0].competitor.name;
+            document.querySelector('#superTeam').textContent = "- Current Super Rugby team:" + " " + p.roles[0].competitor.name;
             for (i = 0; i < p.statistics.seasons.length; i++) {
                 if (p.statistics.seasons[i].id === "sr:season:59620") {
                     document.querySelector('#super2019').textContent = "Super Rugby 2019";
