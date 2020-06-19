@@ -90,6 +90,22 @@ html body {
     display: inline;
 }
 
+.menuitem:hover {
+    background-color: white;
+}
+
+.menuitem a:hover {
+    color: black;
+}
+
+.hiddenButton:hover {
+    background-color: white;
+}
+
+.hiddenButton a:hover {
+    color: black;
+}
+
 .hiddenButton {
     font-size: 2.6vw;
     display: inline;
@@ -190,9 +206,10 @@ html body {
 }
 
 .player-select:hover {
-    color: blue;
+    color: white;
     cursor: pointer;
     text-decoration-line: underline;
+    background-color: black;
 }
 
 .viewProfile {
@@ -203,8 +220,10 @@ html body {
 }
 
 .viewProfile:hover {
-    color: blue;
+    color: white;
     text-decoration-line: underline;
+    background-color: black;
+    cursor: pointer;
 }
 
 
@@ -235,6 +254,7 @@ html body {
     cursor: pointer;
     height: 1.3vw;
     float: right;
+    color: black;
 }
 
 #mySix {
@@ -261,9 +281,10 @@ html body {
     list-style-type: decimal;
     list-style-position: inside;
     display: list-item;
-    animation: fadeIn;
+    animation: fadeInRight;
     animation-duration: 1.5s;
 }
+
 
 .selected {
     padding-left: 15px;

@@ -334,6 +334,7 @@ function createPlayerElements() {
 }
 
 
+
 // API request that forms the individual player profiles when a user clicks on the "view" button.
 
 function getPlayerData() {
