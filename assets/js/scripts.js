@@ -76,9 +76,6 @@ function createPlayerElements() {
                 outter.classList.add('back');
             }
 
-
-
-
             //Enters player into team list
             select.onclick = function () {
                 if (num < 6) {
@@ -119,9 +116,6 @@ function createPlayerElements() {
                         document.getElementById("reset").style.display = 'inline';
                     }
 
-
-
-
                     //API request for combined data, adding data to various arrays that will later be added together 
 
                     var combinedURL = playerURL + newID + api_key;
@@ -134,10 +128,8 @@ function createPlayerElements() {
                         if (this.readyState == 4 && this.status == 200) {
                             a = (JSON.parse(this.responseText));
 
-
-
                             weight.push(a.player.weight);
-                            for (i = 0; i < a.statistics.seasons.length; i++) {
+                            for (let i = 0; i < a.statistics.seasons.length; i++) {
                                 if (a.statistics.seasons[i].id === "sr:season:73071") {
                                     super20Games.push(a.statistics.seasons[i].statistics.matches_played);
                                     super20Tries.push(a.statistics.seasons[i].statistics.tries);
@@ -198,7 +190,7 @@ function createPlayerElements() {
                                 if (weightIndex > -1) {
                                     weight.splice(weightIndex, 1);
                                 } // Super Rugby 2020
-                                for (i = 0; i < a.statistics.seasons.length; i++) {
+                                for (let i = 0; i < a.statistics.seasons.length; i++) {
                                     if (a.statistics.seasons[i].id === "sr:season:73071") {
                                         var super20GamesIndex = super20Games.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                         if (super20GamesIndex > -1)
@@ -219,7 +211,7 @@ function createPlayerElements() {
 
                                 }
                             } // Super Rugby 2019
-                            for (i = 0; i < a.statistics.seasons.length; i++)
+                            for (let i = 0; i < a.statistics.seasons.length; i++)
                                 if (a.statistics.seasons[i].id === "sr:season:59620") {
                                     var super19GamesIndex = super19Games.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                     (super19GamesIndex > -1)
@@ -242,7 +234,7 @@ function createPlayerElements() {
                                 }
 
                             // Rugby World Cup 2019
-                            for (i = 0; i < a.statistics.seasons.length; i++)
+                            for (let i = 0; i < a.statistics.seasons.length; i++)
                                 if (a.statistics.seasons[i].id === "sr:season:59620") {
                                     var RWCGamesIndex = RWCGames.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                     (RWCGamesIndex > -1)
@@ -264,9 +256,8 @@ function createPlayerElements() {
                                     RWCPenalites.splice(RWCPenalitesIndex, 1);
                                 }
 
-
                             // Rugby Championship 2019
-                            for (i = 0; i < a.statistics.seasons.length; i++)
+                            for (let i = 0; i < a.statistics.seasons.length; i++)
                                 if (a.statistics.seasons[i].id === "sr:season:67631") {
                                     var RCGamesIndex = RCGames.indexOf(a.statistics.seasons[i].statistics.matches_played);
                                     (RCGamesIndex > -1)
@@ -314,11 +305,8 @@ function getPlayerData() {
 
             document.querySelector('#playerProfileName').textContent = p.player.name;
 
-
-
-
             //Rugby World Cup 2019
-            for (i = 0; i < p.statistics.seasons.length; i++)
+            for (let i = 0; i < p.statistics.seasons.length; i++)
                 if (p.statistics.seasons[i].id === "sr:season:59616") {
                     document.querySelector('#RWC2019').textContent = "Rugby World Cup 2019";
                     document.querySelector('#RWC2019games').textContent = "- Matches:" + " " + p.statistics.seasons[i].statistics.matches_played;
@@ -360,8 +348,6 @@ function getPlayerData() {
     }
 }
 
-
-
 // Makes sure the welcome modal won't be shown every time the user refreshes the page
 
 
@@ -381,17 +367,17 @@ function forwards() {
     for (let i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
     var forwards = document.getElementsByClassName('back');
-    for (i = 0; i < forwards.length; i++) {
+    for (let i = 0; i < forwards.length; i++) {
         forwards[i].style.display = 'none';
     }
 }
 
 function backs() {
     var allPlayers = document.getElementsByClassName('player-data');
-    for (i = 0; i < allPlayers.length; i++)
+    for (let i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
     var backs = document.getElementsByClassName('forward');
-    for (i = 0; i < backs.length; i++) {
+    for (let i = 0; i < backs.length; i++) {
         backs[i].style.display = 'none';
     }
 }
@@ -399,7 +385,7 @@ function backs() {
 
 function allPlayers() {
     var allPlayers = document.getElementsByClassName('player-data');
-    for (i = 0; i < allPlayers.length; i++)
+    for (let i = 0; i < allPlayers.length; i++)
         allPlayers[i].style.display = '';
 }
 
@@ -488,7 +474,5 @@ function combineInfo() {
     document.getElementById("RC19combinedPenalty").innerHTML = "Penalty Goals:" + " " + combinedRCPenalties;
     combinedRCConversions = RCConversions.reduce(function (a, b) { return a + b; }, 0);
     document.getElementById("RC19combinedConversions").innerHTML = "Conversions:" + " " + combinedRCConversions;
-
-
 }
 
