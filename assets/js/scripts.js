@@ -1,7 +1,7 @@
 let baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=tmh7ew837dqxrne4rg4rcsgh";
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
 let api_key = "/profile.json?api_key=tmh7ew837dqxrne4rg4rcsgh";
-let player_ID; 
+let player_ID;
 let combinedData;
 let playerArray = [];
 let fullPlayerList = [];
@@ -53,7 +53,7 @@ function createPlayerElements() {
             select.id = d.name;
             outter.className = 'player-data';
             view.className = 'viewProfile';
-            view.id = player_ID; 
+            view.id = player_ID;
             view.innerHTML = 'View';
             div.className = 'items';
             view.onclick = (getPlayerData);
@@ -91,7 +91,7 @@ function createPlayerElements() {
                     delPlayer.setAttribute('checked', 'checked');
                     document.getElementById("mySix").appendChild(selPlayer).appendChild(delPlayer);
                     select.style.display = 'none';
-                    num++; 
+                    num++;
                     playerArray.push(d.name); //The second array that determins what profiles to add a select button back to
 
                     newID = d.id; //Forms part of the API request that adds player data together
@@ -107,10 +107,14 @@ function createPlayerElements() {
                         }
                     }
                     if (num === 6) { //Changes the menu from position sort buttons to one link to view combined player data
-                        document.getElementById("myTeamButton").style.display = 'inline'; 
+                        document.getElementById("myTeamButton").style.display = 'inline';
                         document.getElementById("allPlayersButton").style.display = 'none';
                         document.getElementById("forwardsButton").style.display = 'none';
                         document.getElementById("backsButton").style.display = 'none';
+                    }
+
+                    if (num === 3) { //Turn hard reset button display on
+                        document.getElementById("reset").style.display = 'inline';
                     }
 
 
@@ -203,6 +207,11 @@ function createPlayerElements() {
                                     document.getElementById(fullPlayerList[i]).style.display = 'inline';
                                 }
                             }
+
+                            if (num === 3) { //Turn hard reset button display off
+                                document.getElementById("reset").style.display = 'none';
+                            }
+
                             var weightIndex = weight.indexOf(a.player.weight);
                             if (weightIndex > -1) {
                                 weight.splice(weightIndex, 1);
@@ -475,7 +484,7 @@ function combineInfo() {
     } else {
         document.getElementById("footer").style.width = '75%';
     }
-    
+
     //Adds all info in the combined stats arrays and displays it in the combined info display
 
 

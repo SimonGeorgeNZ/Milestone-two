@@ -228,10 +228,6 @@ html body {
 
 
 
-
-
-
-
 /*--------------------------------------------Modals*/
 
 .modal-dialog {
@@ -250,11 +246,19 @@ html body {
 /*--------------------------------------------My Team*/
 
 .deletePlayer {
-    display: inline-block;
     cursor: pointer;
     height: 1.3vw;
     float: right;
-    color: black;
+}
+
+.selectedPlayer {
+    position: relative;
+    list-style-type: decimal;
+    list-style-position: inside;
+    display: list-item, flex;
+    animation: fadeInRight;
+    animation-duration: 1.5s;
+    text-align: left;
 }
 
 #mySix {
@@ -264,8 +268,8 @@ html body {
     color: white;
     padding-left: 1vw;
     width: 100%;
-    
 }
+
 
 .your-team h3 {
     padding-top: 1.3vw;
@@ -274,15 +278,7 @@ html body {
 .your-team {
     padding-left: .5vw!important;
     padding-right: .5vw!important;
-}
-
-.selectedPlayer {
-    position: relative;
-    list-style-type: decimal;
-    list-style-position: inside;
-    display: list-item;
-    animation: fadeInRight;
-    animation-duration: 1.5s;
+    text-align: center;
 }
 
 
@@ -305,7 +301,21 @@ html body {
     list-style-type: none;
 }
 
+#reset {
+    background-color: white;
+    color: black;
+    margin-bottom: 1.5vw;
+    margin-top: 1vw;
+    font-size: 1.5vw;
+    display: none
+}
 
+#reset:hover {
+    color: white;
+    text-decoration-line: underline;
+    background-color: black;
+    cursor: pointer;
+}
 
 
 /*--------------------------------------------Footer*/
