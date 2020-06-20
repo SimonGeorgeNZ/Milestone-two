@@ -234,6 +234,7 @@ html body {
     background-color: white;
     color: black;
     font-family: 'all-blacks';
+    text-align: justify;
 }
 
 .openModalbtn {
