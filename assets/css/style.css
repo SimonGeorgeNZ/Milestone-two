@@ -302,21 +302,6 @@ html body {
     list-style-type: none;
 }
 
-#reset {
-    background-color: white;
-    color: black;
-    margin-bottom: 1.5vw;
-    margin-top: 1vw;
-    font-size: 1.5vw;
-    display: none
-}
-
-#reset:hover {
-    color: white;
-    text-decoration-line: underline;
-    background-color: black;
-    cursor: pointer;
-}
 
 
 /*--------------------------------------------Footer*/

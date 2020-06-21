@@ -113,9 +113,6 @@ function createPlayerElements() {
                         document.getElementById("backsButton").style.display = 'none';
                     }
 
-                    if (num === 3) { //Turn hard reset button display on
-                        document.getElementById("reset").style.display = 'inline';
-                    }
 
 
 
@@ -208,9 +205,6 @@ function createPlayerElements() {
                                 }
                             }
 
-                            if (num === 3) { //Turn hard reset button display off
-                                document.getElementById("reset").style.display = 'none';
-                            }
 
                             var weightIndex = weight.indexOf(a.player.weight);
                             if (weightIndex > -1) {
@@ -341,7 +335,6 @@ function createPlayerElements() {
         });
     });
 }
-
 
 
 // API request that forms the individual player profiles when a user clicks on the "view" button.
