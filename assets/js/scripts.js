@@ -1,6 +1,6 @@
-let baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=cqjy8tbbmupb9sfs6wazr7we";
+let baseURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4227/profile.json?api_key=z3pc2v4tt5zc58njm4x9aryj";
 let playerURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/rugby/trial/v2/union/en/players/";
-let api_key = "/profile.json?api_key=cqjy8tbbmupb9sfs6wazr7we";
+let api_key = "/profile.json?api_key=z3pc2v4tt5zc58njm4x9aryj";
 let player_ID;
 let combinedData;
 let playerArray = [];
