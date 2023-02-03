@@ -18,7 +18,7 @@ let RCGames = []; let RCTries = []; let RCYellow = []; let RCRed = []; let RCPen
 function getData(cb) {
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", baseURL);
+    xhr.open("GET", baseURL)
     xhr.send();
 
     xhr.onreadystatechange = function () {
